@@ -1,4 +1,4 @@
-<!-- 五行分析页 -->
+<!-- 生辰解读页 -->
 <view class="container-safe">
   <!-- 导航栏 -->
   <view class="nav-bar">
@@ -52,7 +52,7 @@
     </view>
   </view>
 
-  <!-- 五行分布 - 通过时间控制显示 -->
+  <!-- 能量分布 - 通过时间控制显示 -->
   <view class="card wuxing-card" wx:if="{{showDetailInfo}}">
     <text class="card-title">能量分布</text>
     <view class="wuxing-chart">

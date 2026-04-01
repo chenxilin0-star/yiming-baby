@@ -55,17 +55,17 @@
       </view>
     </view>
     <view class="bazi-footer">
-      <text class="footer-label">宜用五行</text>
+      <text class="footer-label">宜用能量</text>
       <text class="footer-value">{{result.bazi.xiyongshen}}</text>
       <text class="footer-label">农历</text>
       <text class="footer-value">{{result.bazi.lunarDate}}</text>
     </view>
   </view>
 
-  <!-- 五行分析 -->
+  <!-- 能量分析 -->
   <view class="section-card">
     <view class="section-header">
-      <text class="section-title">五行分析</text>
+      <text class="section-title">能量分析</text>
     </view>
     <view class="wuxing-chart">
       <view class="chart-item">
@@ -104,8 +104,8 @@
         <text class="chart-value">{{result.bazi.wuxing['土'] || 0}}</text>
       </view>
     </view>
-    <view class="wuxing-summary {{result.wuxingAnalysis.balance === '五行平衡' ? 'good' : result.wuxingAnalysis.balance === '五行偏重' ? 'warning' : 'danger'}}">
-      <text class="summary-icon">{{result.wuxingAnalysis.balance === '五行平衡' ? '✓' : '⚠'}}</text>
+    <view class="wuxing-summary {{result.wuxingAnalysis.balance === '能量均衡' ? 'good' : result.wuxingAnalysis.balance === '能量偏重' ? 'warning' : 'danger'}}">
+      <text class="summary-icon">{{result.wuxingAnalysis.balance === '能量均衡' ? '✓' : '⚠'}}</text>
       <text class="summary-text">{{result.wuxingAnalysis.balance}}</text>
     </view>
     <view class="advice-list">

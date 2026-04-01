@@ -1,4 +1,4 @@
-// 五行分析页
+// 生辰解读页
 const quotaManager = require('../../../utils/quota.js')
 const { showError, showLoading, hideLoading } = require('../../../utils/util.js')
 
@@ -98,7 +98,7 @@ Page({
 
   // 计算五行
   async calculateBazi() {
-    showLoading('正在分析五行...')
+    showLoading('正在解读生辰...')
     
     try {
       const { result } = await wx.cloud.callFunction({
@@ -114,12 +114,12 @@ Page({
       if (result.success) {
         this.processBaziData(result.bazi)
       } else {
-        showError(result.message || '五行分析失败')
+        showError(result.message || '生辰解读失败')
       }
     } catch (err) {
       hideLoading()
       console.error('计算五行失败:', err)
-      showError('五行分析失败')
+      showError('生辰解读失败')
     }
   },
 
@@ -149,14 +149,14 @@ Page({
     if (missing.length > 0) {
       summary = `缺${missing.join('缺')}`
     } else {
-      summary = '五行齐全'
+      summary = '能量齐全'
     }
-    
+
     let analysis = ''
     if (strong.length > 0) {
-      analysis = `${strong.join('、')}旺${strong.length > 1 ? '盛' : ''}`
+      analysis = `${strong.join('、')}能量偏旺`
     } else {
-      analysis = '五行平衡'
+      analysis = '能量均衡'
     }
 
     this.setData({
@@ -176,8 +176,8 @@ Page({
   // 查看详细说明
   showDetailInterpretation() {
     wx.showModal({
-      title: '五行推荐说明',
-      content: `根据五行分析，您的代表字为${this.data.baziData.dayMaster}，五行${this.data.wuxingSummary}。推荐使用"${this.data.baziData.xiyongshen}"属性的字，名字中宜使用五行属${this.data.baziData.xiyongshen}的汉字，以达到五行平衡。`,
+      title: '天赋特质说明',
+      content: `根据生辰解读，您的代表字为${this.data.baziData.dayMaster}，${this.data.wuxingSummary}。推荐使用"${this.data.baziData.xiyongshen}"属性的字，名字中宜使用${this.data.baziData.xiyongshen}能量的汉字，以达到能量均衡。`,
       showCancel: false
     })
   },
@@ -216,7 +216,7 @@ Page({
     quotaManager.recordShare(scene)
 
     return {
-      title: '快来看看我的五行分析',
+      title: '快来看看我的生辰解读',
       path: `/pages/index/index?scene=${scene}`,
       imageUrl: ''
     }
@@ -228,7 +228,7 @@ Page({
     quotaManager.recordShare(scene, 'timeline')
 
     return {
-      title: '快来看看我的五行分析',
+      title: '快来看看我的生辰解读',
       query: `scene=${scene}`
     }
   }

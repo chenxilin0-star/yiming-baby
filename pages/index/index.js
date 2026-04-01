@@ -4,13 +4,13 @@ const quotaManager = require('../../utils/quota.js')
 Page({
   data: {
     features: [
-      { icon: '📊', name: '五行分析', desc: '精准分析', bgColor: '#f0f7ff', path: '/pages/form/step1/step1' },
-      { icon: '☯️', name: '五行平衡', desc: '调和五行', bgColor: '#f0fff4', path: '/pages/form/step1/step1' },
-      { icon: '☸️', name: '经典出处', desc: '诗词典故', bgColor: '#fffaf0', path: '/pages/form/step1/step1' },
+      { icon: '📊', name: '生辰解读', desc: '精准分析', bgColor: '#f0f7ff', path: '/pages/form/step1/step1' },
+      { icon: '☯️', name: '能量匹配', desc: '特质平衡', bgColor: '#f0fff4', path: '/pages/form/step1/step1' },
+      { icon: '☸️', name: '诗词典故', desc: '经典出处', bgColor: '#fffaf0', path: '/pages/form/step1/step1' },
       { icon: '🎵', name: '音律美学', desc: '朗朗上口', bgColor: '#f5f0ff', path: '/pages/form/step1/step1' },
       { icon: '🤖', name: '智能推荐', desc: '深度分析', bgColor: '#fff0f5', path: '/pages/form/step1/step1' },
       { icon: '📝', name: '名字分析', desc: '已有名字打分', bgColor: '#f0f5ff', path: '/pages/analyze/form/form' },
-      { icon: '📜', name: '经典出处', desc: '诗意典故', bgColor: '#f0ffff', path: '/pages/form/step1/step1' }
+      { icon: '📜', name: '诗意典故', desc: '经典出处', bgColor: '#f0ffff', path: '/pages/form/step1/step1' }
     ],
     showNoQuotaModal: false,
     quota: { remaining: 1, total: 1 },

@@ -118,8 +118,8 @@
     <view class="info-item">
       <text class="info-icon">📊</text>
       <view class="info-content">
-        <text class="info-title">五行分析</text>
-        <text class="info-desc">基于五行属性，分析名字五行是否平衡</text>
+        <text class="info-title">能量分析</text>
+        <text class="info-desc">基于能量属性，分析名字能量是否均衡</text>
       </view>
     </view>
     <view class="info-item">
