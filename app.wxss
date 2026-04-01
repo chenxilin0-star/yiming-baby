@@ -9,9 +9,9 @@ page {
   --primary-50: #FDF8F3;
   
   /* 主色调 - 淡雅艾绿 */
-  --accent-600: #6B8E7B;
-  --accent-500: #8BA89A;
-  --accent-100: #E8F0EB;
+  --accent-600: #D4838F;
+  --accent-500: #F5C6D0;
+  --accent-100: #F8DDD9;
   
   /* 能量五行色（改叫能量色） */
   --energy-gold: #C9A96E;

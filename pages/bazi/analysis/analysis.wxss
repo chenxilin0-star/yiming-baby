@@ -150,7 +150,7 @@
   display: flex;
   align-items: center;
   padding: 16rpx;
-  background: linear-gradient(135deg, #E8F0EB, #fff);
+  background: linear-gradient(135deg, #F8DDD9, #fff);
   border-radius: var(--radius-md);
 }
 
@@ -299,7 +299,7 @@
 .quota-count {
   font-size: 26rpx;
   font-weight: 600;
-  color: #6B8E7B;
+  color: #D4838F;
   white-space: nowrap;
 }
 
@@ -317,7 +317,7 @@
   justify-content: center;
   gap: 6rpx;
   padding: 18rpx 24rpx;
-  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
+  background: linear-gradient(135deg, #D4838F, #F5C6D0);
   border-radius: 40rpx;
   box-shadow: 0 8rpx 24rpx rgba(107, 142, 123, 0.25);
   white-space: nowrap;

@@ -19,7 +19,7 @@
   display: block;
   font-size: 48rpx;
   font-weight: 700;
-  color: #6B8E7B;
+  color: #D4838F;
   margin-bottom: 20rpx;
   letter-spacing: 4rpx;
 }
@@ -39,7 +39,7 @@
   color: #1a1a1a;
   margin-bottom: 30rpx;
   padding-left: 20rpx;
-  border-left: 6rpx solid #6B8E7B;
+  border-left: 6rpx solid #D4838F;
 }
 
 /* 服务介绍 */
@@ -86,7 +86,7 @@
   display: block;
   font-size: 30rpx;
   font-weight: 600;
-  color: #6B8E7B;
+  color: #D4838F;
   margin-bottom: 12rpx;
 }
 
@@ -156,7 +156,7 @@
   display: block;
   font-size: 28rpx;
   font-weight: 600;
-  color: #6B8E7B;
+  color: #D4838F;
   margin-bottom: 16rpx;
   text-align: center;
 }
@@ -233,7 +233,7 @@
 .footer-text {
   display: block;
   font-size: 26rpx;
-  color: #6B8E7B;
+  color: #D4838F;
   margin-bottom: 8rpx;
 }
 

@@ -8,7 +8,7 @@
 /* 用户信息卡 */
 .user-card {
   position: relative;
-  background: linear-gradient(135deg, #6B8E7B 0%, #8BA89A 100%);
+  background: linear-gradient(135deg, #D4838F 0%, #F5C6D0 100%);
   padding: 120rpx 48rpx 80rpx;
   border-radius: 0 0 48rpx 48rpx;
   overflow: hidden;
@@ -82,7 +82,7 @@
   background: #fff !important;
   border-radius: 40rpx !important;
   font-size: 30rpx !important;
-  color: #6B8E7B !important;
+  color: #D4838F !important;
   font-weight: 500 !important;
   box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.15) !important;
   border: none !important;
@@ -124,7 +124,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4rpx solid #6B8E7B;
+  border: 4rpx solid #D4838F;
 }
 
 .badge-icon {
@@ -475,7 +475,7 @@
 }
 
 .nickname-input:focus {
-  border-color: #6B8E7B;
+  border-color: #D4838F;
   background: #fffbfb;
 }
 
@@ -504,6 +504,6 @@
 }
 
 .confirm-btn {
-  background: linear-gradient(135deg, #6B8E7B, #8BA89A) !important;
+  background: linear-gradient(135deg, #D4838F, #F5C6D0) !important;
   color: #fff !important;
 }

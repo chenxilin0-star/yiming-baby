@@ -93,7 +93,7 @@ Page({
         ctx.fillText('国学智能起名', this.data.canvasWidth / 2, 60)
 
         // 绘制分隔线
-        ctx.strokeStyle = '#6B8E7B'
+        ctx.strokeStyle = '#D4838F'
         ctx.lineWidth = 2
         ctx.beginPath()
         ctx.moveTo(this.data.canvasWidth / 2 - 60, 75)
@@ -106,7 +106,7 @@ Page({
         ctx.fillText(this.data.nameData.name || '李沐辰', this.data.canvasWidth / 2, 180)
 
         // 绘制分隔装饰
-        ctx.strokeStyle = '#6B8E7B'
+        ctx.strokeStyle = '#D4838F'
         ctx.lineWidth = 3
         ctx.beginPath()
         ctx.moveTo(this.data.canvasWidth / 2 - 50, 210)
@@ -151,7 +151,7 @@ Page({
         ctx.fillText('长按扫码，为宝宝取好名', this.data.canvasWidth / 2, 460)
 
         // 绘制天赋信息
-        ctx.fillStyle = '#6B8E7B'
+        ctx.fillStyle = '#D4838F'
         ctx.font = '12px sans-serif'
         ctx.fillText(`天赋特质：${this.data.baziData.xiyongshen || '水、金'}`, this.data.canvasWidth / 2, 500)
 

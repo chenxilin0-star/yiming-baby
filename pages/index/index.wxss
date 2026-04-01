@@ -94,7 +94,7 @@
 .logo-wrap {
   width: 120rpx;
   height: 120rpx;
-  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
+  background: linear-gradient(135deg, #D4838F, #F5C6D0);
   border-radius: 32rpx;
   display: flex;
   align-items: center;
@@ -142,7 +142,7 @@
 
 .quote-mark {
   font-size: 60rpx;
-  color: #6B8E7B;
+  color: #D4838F;
   font-family: "Noto Serif SC", serif;
   line-height: 1;
   margin-right: 16rpx;
@@ -171,7 +171,7 @@
   background: linear-gradient(135deg, #fff 0%, #F5EDE4 100%);
   border-radius: 24rpx;
   box-shadow: 0 8rpx 32rpx rgba(107, 142, 123, 0.08);
-  border: 2rpx solid #E8F0EB;
+  border: 2rpx solid #F8DDD9;
 }
 
 .quota-icon-wrap {
@@ -196,7 +196,7 @@
 .quota-count {
   font-size: 48rpx;
   font-weight: 700;
-  color: #6B8E7B;
+  color: #D4838F;
 }
 
 .quota-unit {
@@ -228,7 +228,7 @@
 
 .action-arrow {
   font-size: 28rpx;
-  color: #6B8E7B;
+  color: #D4838F;
 }
 
 /* 服务特色 */
@@ -319,7 +319,7 @@
   display: block;
   font-size: 40rpx;
   font-weight: 700;
-  color: #6B8E7B;
+  color: #D4838F;
   margin-bottom: 8rpx;
 }
 
@@ -350,7 +350,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 32rpx 40rpx;
-  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
+  background: linear-gradient(135deg, #D4838F, #F5C6D0);
   border-radius: 48rpx;
   box-shadow: 0 12rpx 40rpx rgba(107, 142, 123, 0.3);
 }
@@ -462,7 +462,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
+  background: linear-gradient(135deg, #D4838F, #F5C6D0);
   color: #fff;
 }
 

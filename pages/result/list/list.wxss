@@ -284,7 +284,7 @@
 
 .share-card {
   background: linear-gradient(135deg, #F5EDE4, #fff);
-  border: 2rpx solid #E8F0EB;
+  border: 2rpx solid #F8DDD9;
   border-radius: var(--radius-lg);
   padding: 32rpx;
   text-align: center;
