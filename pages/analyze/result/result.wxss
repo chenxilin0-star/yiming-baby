@@ -182,7 +182,7 @@
   font-weight: 500;
 }
 
-/* 五行图表 */
+/* 能量图表 */
 .wuxing-chart {
   margin-bottom: 32rpx;
 }

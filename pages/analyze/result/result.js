@@ -16,11 +16,11 @@ Page({
     // 计算评分颜色
     const scoreColor = this.getScoreColor(analyzeResult.score)
 
-    // 获取五行数量 - 正确的路径是 bazi.wuxing
+    // 获取能量数量 - 正确的路径是 bazi.wuxing
     const wuxingData = analyzeResult.bazi.wuxing || { '金': 0, '木': 0, '水': 0, '火': 0, '土': 0 }
     const total = (wuxingData['金'] + wuxingData['木'] + wuxingData['水'] + wuxingData['火'] + wuxingData['土']) || 1
 
-    // 计算五行百分比
+    // 计算能量百分比
     const wuxingPercent = {
       金: wuxingData['金'] ? ((wuxingData['金'] / total) * 100).toFixed(1) : '0',
       木: wuxingData['木'] ? ((wuxingData['木'] / total) * 100).toFixed(1) : '0',

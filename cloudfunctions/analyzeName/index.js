@@ -331,14 +331,14 @@ function analyzeWuxingBalance(nameWuxingCount, dayGan, WUXING_MAP) {
 
   let balance, advice
   if (hasWuxing <= 2) {
-    balance = '五行不全'
-    advice = `名字中只包含${hasWuxing}种五行，建议补充缺失的五行以平衡命理`
+    balance = '能量待补'
+    advice = `名字中包含${hasWuxing}种能量特质，建议关注其他能量维度让特质更丰富`
   } else if (maxCount >= 4) {
-    balance = '五行偏重'
-    advice = `"${maxWuxing}行过多(${maxCount}个），可能导致性格过于${maxWuxing === '金' ? '刚硬' : maxWuxing === '木' ? '固执' : maxWuxing === '水' ? '多变' : maxWuxing === '火' ? '急躁' : '固执'}`
+    balance = '能量偏盛'
+    advice = `"${maxWuxing}能量较为充足(${maxCount}个），性格特质偏向${maxWuxing === '金' ? '果断坚毅' : maxWuxing === '木' ? '仁善正直' : maxWuxing === '水' ? '灵动智慧' : maxWuxing === '火' ? '热情活力' : '忠厚稳重'}`
   } else {
-    balance = '五行平衡'
-    advice = '五行分布较为均衡，有利于性格发展和运势'
+    balance = '能量均衡'
+    advice = '能量分布较为和谐，有利于性格的全面发展'
   }
 
   return {

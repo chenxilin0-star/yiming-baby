@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
           y1: 200,
           x2: 500,
           y2: 200,
-          color: '#c45c48',
+          color: '#6B8E7B',
           width: 2
         },
         {
@@ -62,7 +62,7 @@ exports.main = async (event, context) => {
         },
         {
           type: 'text',
-          text: `五行：${nameData?.wuxing || '水+土'}`,
+          text: `能量：${nameData?.wuxing || '水+土'}`,
           x: 375,
           y: 450,
           fontSize: 30,
@@ -109,7 +109,7 @@ exports.main = async (event, context) => {
           x: 375,
           y: 1150,
           fontSize: 24,
-          color: '#c45c48',
+          color: '#6B8E7B',
           textAlign: 'center'
         }
       ]

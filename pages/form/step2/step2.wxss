@@ -28,7 +28,7 @@
   left: 40rpx;
   width: 80rpx;
   height: 4rpx;
-  background: #c45c48;
+  background: #6B8E7B;
   border-radius: 2rpx;
 }
 
@@ -80,13 +80,13 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #c45c48, #e07a6a);
+  background: linear-gradient(90deg, #6B8E7B, #8BA89A);
   border-radius: 3rpx;
 }
 
 .nav-step {
   font-size: 32rpx;
-  color: #c45c48;
+  color: #6B8E7B;
   font-weight: 500;
 }
 
@@ -140,7 +140,7 @@
 
 .item-required {
   font-size: 32rpx;
-  color: #c45c48;
+  color: #6B8E7B;
   margin-left: 8rpx;
 }
 
@@ -170,7 +170,7 @@
 
 .picker-box:active {
   background: #fff;
-  border-color: #c45c48;
+  border-color: #6B8E7B;
 }
 
 .picker-content {
@@ -195,7 +195,7 @@
 
 .picker-arrow {
   font-size: 36rpx;
-  color: #c45c48;
+  color: #6B8E7B;
   font-weight: 300;
 }
 
@@ -216,7 +216,7 @@
 
 .shichen-badge {
   padding: 12rpx 24rpx;
-  background: linear-gradient(135deg, #c45c48, #d67a6a);
+  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
   border-radius: 16rpx;
   font-size: 28rpx;
   color: #fff;
@@ -230,7 +230,7 @@
 
 .help-text {
   font-size: 26rpx;
-  color: #c45c48;
+  color: #6B8E7B;
   text-decoration: underline;
 }
 
@@ -283,7 +283,7 @@
 
 .tag-item.active {
   background: #fff;
-  border-color: #c45c48;
+  border-color: #6B8E7B;
   box-shadow: 0 4rpx 16rpx rgba(196, 92, 72, 0.12);
 }
 
@@ -298,7 +298,7 @@
 }
 
 .tag-item.active .tag-name {
-  color: #c45c48;
+  color: #6B8E7B;
   font-weight: 500;
 }
 
@@ -316,7 +316,7 @@
 
 .input-box.focus {
   background: #fff;
-  border-color: #c45c48;
+  border-color: #6B8E7B;
 }
 
 .avoid-input {
@@ -329,7 +329,7 @@
 .add-char-btn {
   width: 56rpx;
   height: 56rpx;
-  background: linear-gradient(135deg, #c45c48, #d67a6a);
+  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
   border-radius: 16rpx;
   display: flex;
   align-items: center;
@@ -372,7 +372,7 @@
 
 .tag-char {
   font-size: 30rpx;
-  color: #c45c48;
+  color: #6B8E7B;
   font-weight: 500;
   margin-right: 12rpx;
 }
@@ -431,7 +431,7 @@
 }
 
 .submit-btn.active {
-  background: linear-gradient(135deg, #c45c48, #d67a6a);
+  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
   box-shadow: 0 8rpx 32rpx rgba(196, 92, 72, 0.3);
 }
 

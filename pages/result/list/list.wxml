@@ -60,7 +60,7 @@
           <text class="section-title">单字解析</text>
           <view class="char-detail" wx:for="{{item.singleChars}}" wx:for-item="char" wx:key="char">
             <text class="char-name">{{char.char}}（{{char.pinyin}}）</text>
-            <text class="char-info">{{char.strokes}}画 五行：{{char.wuxing}}</text>
+            <text class="char-info">{{char.strokes}}画 能量：{{char.wuxing}}</text>
             <text class="char-meaning">{{char.meaning}}</text>
           </view>
         </view>

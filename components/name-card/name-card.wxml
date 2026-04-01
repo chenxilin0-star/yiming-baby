@@ -4,7 +4,7 @@
     <text class="rank">{{rank}}</text>
     <view class="info">
       <text class="name">{{nameData.name}}</text>
-      <text class="meta">五行：{{nameData.wuxing}} | 卦象：{{nameData.gua.name}}</text>
+      <text class="meta">能量：{{nameData.wuxing}} | 出处：{{nameData.gua.name}}</text>
     </view>
     <view class="score" style="background: {{scoreColor}};">
       <text class="score-value">{{nameData.score}}</text>

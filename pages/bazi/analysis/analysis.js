@@ -96,7 +96,7 @@ Page({
     }
   },
 
-  // 计算五行
+  // 计算生辰
   async calculateBazi() {
     showLoading('正在解读生辰...')
     

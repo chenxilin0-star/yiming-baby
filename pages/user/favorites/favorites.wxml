@@ -31,7 +31,7 @@
           <text class="item-score" style="color: {{item.scoreColor}};">{{item.score}}分</text>
         </view>
         <view class="item-info">
-          <text class="info-item">五行：{{item.wuxing}}</text>
+          <text class="info-item">能量：{{item.wuxing}}</text>
         </view>
         <view class="item-quote">
           <text>"{{item.interpretation}}"</text>

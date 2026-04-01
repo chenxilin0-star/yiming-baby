@@ -18,7 +18,7 @@
     <view class="feature-list">
       <view class="feature-item">
         <text class="feature-title">智能起名</text>
-        <text class="feature-desc">AI智能分析，结合五行属性，为宝宝推荐最适合的名字组合</text>
+        <text class="feature-desc">AI智能分析，结合诗词典籍，为宝宝推荐最适合的名字组合</text>
       </view>
       <view class="feature-item">
         <text class="feature-title">生辰解读</text>
@@ -51,7 +51,7 @@
       <text class="guide-text">1. 注意名字的读音是否顺口，避免拗口或不雅的谐音</text>
       <text class="guide-text">2. 考虑名字的字形结构，书写是否美观大方</text>
       <text class="guide-text">3. 关注名字的寓意，选择积极向上、寓意美好的字</text>
-      <text class="guide-text">4. 结合宝宝的出生时间，选择五行相配的汉字</text>
+      <text class="guide-text">4. 结合宝宝的出生时间，选择诗词典故的汉字</text>
       <text class="guide-text">5. 避免与长辈名字相同或相近，尊重家族传统</text>
 
       <text class="guide-title">二、2024年龙宝宝起名推荐</text>
@@ -89,7 +89,7 @@
     <view class="faq-list">
       <view class="faq-item">
         <text class="faq-q">Q：如何给宝宝起一个好名字？</text>
-        <text class="faq-a">A：好名字需要考虑音、形、义三个方面。读音要朗朗上口，字形要美观易写，寓意要美好吉祥。同时可以结合宝宝的出生时间，选择五行相配的字。</text>
+        <text class="faq-a">A：好名字需要考虑音、形、义三个方面。读音要朗朗上口，字形要美观易写，寓意要美好吉祥。同时可以结合宝宝的出生时间，选择诗词典故的字。</text>
       </view>
       <view class="faq-item">
         <text class="faq-q">Q：宝宝起名需要避讳什么？</text>
