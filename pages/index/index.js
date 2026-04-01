@@ -77,41 +77,6 @@ Page({
     this.setData({ showNoQuotaModal: false })
   },
 
-  // 测试功能：增加起名次数
-  async addTestQuota() {
-    try {
-      wx.showLoading({ title: '增加中...' })
-
-      const { result } = await wx.cloud.callFunction({
-        name: 'addTestQuota'
-      })
-
-      wx.hideLoading()
-
-      if (result.success) {
-        wx.showToast({
-          title: '已增加1次',
-          icon: 'success'
-        })
-        // 刷新配额显示
-        quotaManager.clearCache()
-        this.loadQuota(true)
-      } else {
-        wx.showToast({
-          title: result.message || '增加失败',
-          icon: 'none'
-        })
-      }
-    } catch (err) {
-      wx.hideLoading()
-      console.error('增加次数失败:', err)
-      wx.showToast({
-        title: '操作失败',
-        icon: 'none'
-      })
-    }
-  },
-
   goBack() {
     // 首页不需要返回
   },
