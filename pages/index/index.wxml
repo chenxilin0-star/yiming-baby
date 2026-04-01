@@ -1,9 +1,9 @@
 <!-- 首页 -->
 <view class="page-container">
   <!-- 测试按钮 -->
-  <!-- <view class="test-btn" bindtap="addTestQuota">
+  <view class="test-btn" bindtap="addTestQuota">
     <text class="test-icon">+</text>
-  </view> -->
+  </view>
 
   <!-- 顶部装饰背景 -->
   <view class="hero-section">
