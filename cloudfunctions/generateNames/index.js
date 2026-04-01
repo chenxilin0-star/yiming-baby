@@ -262,7 +262,7 @@ function generateNamesByAI(input, bazi) {
         pinyin: getPinyin(wxChar),
         wuxing: xiyongshen,
         strokes: getStrokes(wxChar),
-        meaning: `五行属${xiyongshen}，寓意吉祥`
+        meaning: `天赋${xiyongshen}能量，寓意美好`
       },
       {
         char: gnChar,

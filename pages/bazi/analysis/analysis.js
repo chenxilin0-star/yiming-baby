@@ -3,11 +3,11 @@ const quotaManager = require('../../../utils/quota.js')
 const { showError, showLoading, hideLoading } = require('../../../utils/util.js')
 
 const WUXING_COLORS = {
-  '金': '#d4af37',
-  '木': '#5a9a5a',
-  '水': '#4a90d9',
-  '火': '#e74c3c',
-  '土': '#8b7355'
+  '金': '#C9A96E',
+  '木': '#7BA08A',
+  '水': '#6B8FA8',
+  '火': '#C47B5C',
+  '土': '#A08B7B'
 }
 
 Page({

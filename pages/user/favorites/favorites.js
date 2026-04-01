@@ -3,10 +3,10 @@ const { showSuccess, showError, showModal } = require('../../../utils/util.js')
 
 // 评分颜色
 function getScoreColor(score) {
-  if (score >= 90) return '#d4af37'
-  if (score >= 80) return '#52c41a'
-  if (score >= 70) return '#4a90d9'
-  return '#8a8a8a'
+  if (score >= 90) return '#C9A96E'
+  if (score >= 80) return '#7BA08A'
+  if (score >= 70) return '#6B8FA8'
+  return '#A08B7B'
 }
 
 Page({
@@ -100,7 +100,20 @@ Page({
   selectItem(e) {
     if (!this.data.isEditing) {
       // 非编辑模式下跳转到详情
-      // TODO: 跳转到详情
+      const index = e.currentTarget.dataset.index
+      const item = this.data.favorites[index]
+      // 将收藏项存入 storage，详情页优先读取
+      wx.setStorageSync('favorite_name_data', {
+        name: item.name,
+        score: item.score,
+        wuxing: item.wuxing,
+        interpretation: item.interpretation,
+        singleChars: item.singleChars || [
+          { char: item.name.charAt(0), pinyin: '', wuxing: '', meaning: '' },
+          { char: item.name.charAt(1), pinyin: '', wuxing: '', meaning: '' }
+        ]
+      })
+      wx.navigateTo({ url: '/pages/result/detail/detail' })
       return
     }
 

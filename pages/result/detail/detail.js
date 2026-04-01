@@ -3,11 +3,11 @@ const quotaManager = require('../../../utils/quota.js')
 const { showSuccess, showError } = require('../../../utils/util.js')
 
 const WUXING_COLORS = {
-  '金': '#d4af37',
-  '木': '#5a9a5a',
-  '水': '#4a90d9',
-  '火': '#e74c3c',
-  '土': '#8b7355'
+  '金': '#C9A96E',
+  '木': '#7BA08A',
+  '水': '#6B8FA8',
+  '火': '#C47B5C',
+  '土': '#A08B7B'
 }
 
 Page({
@@ -32,7 +32,34 @@ Page({
   onLoad() {
     // 加载当前名字数据
     const result = wx.getStorageSync('generation_result')
+    const favoriteData = wx.getStorageSync('favorite_name_data')
     const index = wx.getStorageSync('current_name_index') || 0
+    
+    // 优先从收藏来源读取数据（仅含单字信息）
+    if (favoriteData) {
+      wx.removeStorageSync('favorite_name_data')
+      const score = favoriteData.score
+      const scoreLevel = score >= 90 ? '上吉' : score >= 80 ? '吉' : '中吉'
+      const scoreColor = score >= 90 ? '#C9A96E' : score >= 80 ? '#7BA08A' : '#6B8FA8'
+      const pinyinArray = (favoriteData.singleChars || []).map(c => `${c.char}(${c.pinyin || '—'})`)
+      
+      this.setData({
+        nameData: favoriteData,
+        baziData: {},
+        recordId: '',
+        scoreColor,
+        scoreLevel,
+        pinyinArray,
+        shengdiaoDesc: '仄仄平，起伏有致',
+        yunmuDesc: '错落有致',
+        guaSymbol: '喜悦、沟通、和谐',
+        guaPersonality: '外柔内刚，善于表达',
+        guaCareer: '适合人际、传播、教育领域',
+        modernInterpretation: favoriteData.interpretation || '',
+        wuge: {}
+      })
+      return
+    }
     
     if (!result || !result.names[index]) {
       wx.redirectTo({ url: '/pages/index/index' })
@@ -48,13 +75,13 @@ Page({
 
     // 评分等级
     let scoreLevel = '上吉'
-    let scoreColor = '#d4af37'
+    let scoreColor = '#C9A96E'
     if (score < 90) {
       scoreLevel = '吉'
-      scoreColor = '#52c41a'
+      scoreColor = '#7BA08A'
     } else if (score < 80) {
       scoreLevel = '中吉'
-      scoreColor = '#4a90d9'
+      scoreColor = '#6B8FA8'
     }
 
     // 生成拼音数组

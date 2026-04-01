@@ -456,23 +456,23 @@ function calculateScore(wuge, wuxingAnalysis, nameWuxingCount) {
     // 凶不加分
   })
 
-  // 五行平衡评分（最多20分）
-  if (wuxingAnalysis.balance === '五行平衡') score += 20
-  else if (wuxingAnalysis.balance === '五行偏重') score += 10
-  else if (wuxingAnalysis.balance === '五行不全') score += 5
+  // 能量平衡评分（最多20分）
+  if (wuxingAnalysis.balance === '能量均衡') score += 20
+  else if (wuxingAnalysis.balance === '能量偏盛') score += 10
+  else if (wuxingAnalysis.balance === '能量待补') score += 5
 
-  // 五行完整度评分（最多15分）
+  // 能量完整度评分（最多15分）
   if (wuxingAnalysis.hasWuxing >= 5) score += 15
   else if (wuxingAnalysis.hasWuxing >= 4) score += 10
   else if (wuxingAnalysis.hasWuxing >= 3) score += 5
-  // 1-2种五行不加分
+  // 1-2种能量不加分
 
-  // 日主五行在名字中（10分）
+  // 日主能量在名字中（10分）
   if (wuxingAnalysis.isDayWuxingInName) score += 10
 
-  // 凶格惩罚（每个凶格扣5分，最多扣20分）
+  // 数理评分（每个不利格局扣3分，最多扣15分）
   const badCount = wugeItems.filter(item => item.jixiong === '凶').length
-  score -= badCount * 5
+  score -= badCount * 3
 
   return Math.min(100, Math.max(0, score))
 }
@@ -492,18 +492,18 @@ function generateSuggestions(wuge, wuxingAnalysis, dayGan) {
     suggestions.push('地格为凶，建议调整名字组合')
   }
 
-  // 五行建议
-  if (wuxingAnalysis.balance === '五行不全') {
-    suggestions.push(`建议补充缺失的五行，以平衡命理`)
+  // 能量建议
+  if (wuxingAnalysis.balance === '能量待补') {
+    suggestions.push(`建议关注其他能量特质，让宝宝性格更丰富多元`)
   }
-  if (wuxingAnalysis.balance === '五行偏重') {
-    suggestions.push(`"${wuxingAnalysis.maxWuxing}行过多，建议增加其他五行以平衡`)
+  if (wuxingAnalysis.balance === '能量偏盛') {
+    suggestions.push(`"${wuxingAnalysis.maxWuxing}能量较为充足，可注意性格均衡发展`)
   }
 
   // 综合建议
   if (suggestions.length === 0) {
-    suggestions.push('名字整体较好，可继续使用')
-    suggestions.push('如需改善，可考虑调整单个字的五行组合')
+    suggestions.push('名字整体较好，能量特质和谐')
+    suggestions.push('如需调整，可关注单个字的音韵和寓意搭配')
   }
 
   return suggestions
