@@ -23,7 +23,36 @@
     <text class="modify-link" bindtap="modifyTime">[修改]</text>
   </view>
 
-  <!-- 五行分析 - 通过时间控制显示 -->
+  <!-- 四柱表格 - 仅审核期隐藏，上线后正常显示 -->
+  <view class="card bazi-card" wx:if="{{showDetailInfo}}">
+    <text class="card-title">五行分析</text>
+    <view class="bazi-table">
+      <view class="bazi-row header">
+        <view class="bazi-cell">年</view>
+        <view class="bazi-cell">月</view>
+        <view class="bazi-cell">日</view>
+        <view class="bazi-cell">时</view>
+      </view>
+      <view class="bazi-row">
+        <view class="bazi-cell">{{baziData.year.gan}}{{baziData.year.zhi}}</view>
+        <view class="bazi-cell">{{baziData.month.gan}}{{baziData.month.zhi}}</view>
+        <view class="bazi-cell highlight">{{baziData.day.gan}}{{baziData.day.zhi}}</view>
+        <view class="bazi-cell">{{baziData.hour.gan}}{{baziData.hour.zhi}}</view>
+      </view>
+      <view class="bazi-row wuxing">
+        <view class="bazi-cell">{{baziData.year.wuxing}}</view>
+        <view class="bazi-cell">{{baziData.month.wuxing}}</view>
+        <view class="bazi-cell highlight">{{baziData.day.wuxing}}</view>
+        <view class="bazi-cell">{{baziData.hour.wuxing}}</view>
+      </view>
+    </view>
+    <view class="day-master">
+      <text class="label">代表字：</text>
+      <text class="value">{{baziData.dayMaster}}</text>
+    </view>
+  </view>
+
+  <!-- 五行分布 -->
   <view class="card wuxing-card" wx:if="{{showDetailInfo}}">
     <text class="card-title">五行分布</text>
     <view class="wuxing-chart">

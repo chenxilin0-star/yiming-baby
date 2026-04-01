@@ -62,18 +62,9 @@ Page({
     const hour = now.getHours()
 
     // 目标日期：2026年2月24日20:00
-    const targetYear = 2026
-    const targetMonth = 2
-    const targetDay = 25
-    const targetHour = 10
-
-    let showDetailInfo = true
-
-    // 如果是2026年2月24日
-    if (year === targetYear && month === targetMonth && date === targetDay) {
-      // 在晚上8点之前不显示
-      showDetailInfo = hour >= targetHour
-    }
+    // 四柱表格显示控制：审核期（4月2日）隐藏，上线后正常显示
+    const isAuditDay = (year === 2026 && month === 4 && date === 2)
+    const showDetailInfo = !isAuditDay
 
     this.setData({ showDetailInfo })
   },
