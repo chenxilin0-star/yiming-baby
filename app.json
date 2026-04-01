@@ -23,17 +23,21 @@
   },
   "tabBar": {
     "color": "#8D8D8D",
-    "selectedColor": "#6B8E7B",
+    "selectedColor": "#D4838F",
     "backgroundColor": "#fff",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "智能起名"
+        "text": "智能起名",
+        "iconPath": "images/tab_home.png",
+        "selectedIconPath": "images/tab_home_active.png"
       },
       {
         "pagePath": "pages/user/center/center",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "images/tab_user.png",
+        "selectedIconPath": "images/tab_user_active.png"
       }
     ]
   },
