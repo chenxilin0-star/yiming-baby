@@ -25,7 +25,7 @@
 
   <!-- 生辰信息 - 通过时间控制显示 -->
   <view class="card bazi-card" wx:if="{{showDetailInfo}}">
-    <text class="card-title">生辰排盘</text>
+    <text class="card-title">生辰解读</text>
     <view class="bazi-table">
       <view class="bazi-row header">
         <view class="bazi-cell">年</view>
