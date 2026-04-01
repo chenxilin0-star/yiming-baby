@@ -29,7 +29,7 @@ Page({
     xiyongshenColor: '#4a90d9',
     quotaText: '剩余1次',
     isGenerating: false,
-    showDetailInfo: false  // 控制生辰信息和五行分布的显示
+    showDetailInfo: false  // 控制生辰信息和能量分布的显示
   },
 
   async onLoad() {
@@ -48,7 +48,7 @@ Page({
     // 加载配额
     this.loadQuota()
 
-    // 计算五行
+    // 计算生辰
     this.calculateBazi()
   },
 
@@ -118,7 +118,7 @@ Page({
       }
     } catch (err) {
       hideLoading()
-      console.error('计算五行失败:', err)
+      console.error('生辰解读失败:', err)
       showError('生辰解读失败')
     }
   },
@@ -128,7 +128,7 @@ Page({
     const wuxing = bazi.wuxing
     const total = Object.values(wuxing).reduce((a, b) => a + b, 0)
     
-    // 生成五行数组用于图表
+    // 生成能量数组用于图表
     const wuxingArray = [
       { name: '金', count: wuxing['金'], color: WUXING_COLORS['金'], percent: Math.max(10, (wuxing['金'] / total) * 100) },
       { name: '木', count: wuxing['木'], color: WUXING_COLORS['木'], percent: Math.max(10, (wuxing['木'] / total) * 100) },
@@ -137,7 +137,7 @@ Page({
       { name: '土', count: wuxing['土'], color: WUXING_COLORS['土'], percent: Math.max(10, (wuxing['土'] / total) * 100) }
     ]
 
-    // 分析五行缺失和旺衰
+    // 分析能量分布
     const missing = []
     const strong = []
     for (const [name, count] of Object.entries(wuxing)) {
