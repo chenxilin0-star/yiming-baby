@@ -1,0 +1,111 @@
+<!-- 首页 -->
+<view class="page-container">
+  <!-- 测试按钮 -->
+  <!-- <view class="test-btn" bindtap="addTestQuota">
+    <text class="test-icon">+</text>
+  </view> -->
+
+  <!-- 顶部装饰背景 -->
+  <view class="hero-section">
+    <view class="hero-bg">
+      <view class="circle circle-1"></view>
+      <view class="circle circle-2"></view>
+      <view class="pattern pattern-1"></view>
+      <view class="pattern pattern-2"></view>
+    </view>
+
+    <!-- 品牌区 -->
+    <view class="brand-area">
+      <view class="logo-wrap">
+        <text class="logo-icon">诗</text>
+      </view>
+      <text class="brand-name">易名宝宝</text>
+      <text class="brand-tagline">智能起名 · 传承诗词之美</text>
+    </view>
+
+    <!-- 宣传语卡片 -->
+    <view class="quote-card">
+      <text class="quote-mark">"</text>
+      <text class="quote-text">赐子千金，不如赐子一名</text>
+      <text class="quote-mark closing">"</text>
+    </view>
+  </view>
+
+  <!-- 次数指示器 -->
+  <view class="quota-card" bindtap="showQuotaDetail">
+    <view class="quota-icon-wrap">
+      <text class="quota-icon">🎫</text>
+    </view>
+    <view class="quota-info">
+      <text class="quota-count">{{quota.remaining}}<text class="quota-unit">次</text></text>
+      <text class="quota-label">今日剩余起名机会</text>
+    </view>
+    <view class="quota-action">
+      <text class="action-text">详情</text>
+      <text class="action-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 服务特色 -->
+  <view class="features-section">
+    <view class="section-header">
+      <text class="section-title">服务特色</text>
+      <text class="section-subtitle">结合诗词典籍与智能分析</text>
+    </view>
+    <view class="features-grid">
+      <view class="feature-item" wx:for="{{features}}" wx:key="name" bindtap="navigateToFeature" data-feature="{{item.name}}">
+        <view class="feature-icon-wrap" style="background: {{item.bgColor}};">
+          <text class="feature-icon">{{item.icon}}</text>
+        </view>
+        <text class="feature-name">{{item.name}}</text>
+        <text class="feature-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据统计 -->
+  <view class="stats-bar">
+    <view class="stat-item">
+      <text class="stat-num">10万+</text>
+      <text class="stat-label">家庭信赖</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">98%</text>
+      <text class="stat-label">好评率</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-num">3秒</text>
+      <text class="stat-label">快速生成</text>
+    </view>
+  </view>
+
+  <!-- 底部操作区 -->
+  <view class="footer-area">
+    <button class="start-btn {{hasQuota ? '' : 'disabled'}}" bindtap="startNaming">
+      <view class="btn-content">
+        <text class="btn-icon">✨</text>
+        <view class="btn-text-wrap">
+          <text class="btn-main-text">开始起名</text>
+          <text class="btn-sub-text">免费体验 智能起名</text>
+        </view>
+      </view>
+      <text class="btn-arrow">→</text>
+    </button>
+  </view>
+
+  <!-- 无次数弹窗 -->
+  <view class="modal" wx:if="{{showNoQuotaModal}}">
+    <view class="modal-mask" bindtap="closeNoQuotaModal"></view>
+    <view class="modal-content">
+      <view class="modal-icon">🌙</view>
+      <text class="modal-title">今日次数已用完</text>
+      <text class="modal-desc">每日0点自动恢复1次\n或分享好友立即获得机会</text>
+      <view class="modal-actions">
+        <button class="btn-primary" open-type="share">分享给好友</button>
+        <button class="btn-secondary" bindtap="closeNoQuotaModal">我知道了</button>
+      </view>
+    </view>
+  </view>
+</view>

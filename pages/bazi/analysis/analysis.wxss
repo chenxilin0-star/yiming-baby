@@ -1,0 +1,343 @@
+/* 八字分析页 */
+.container-safe {
+  padding: 0 32rpx 48rpx;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  margin-bottom: 24rpx;
+}
+
+.nav-back {
+  width: 80rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  font-size: 40rpx;
+  color: var(--primary-900);
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: var(--primary-900);
+}
+
+.nav-placeholder {
+  width: 80rpx;
+}
+
+/* 卡片通用样式 */
+.card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: var(--primary-900);
+  margin-bottom: 24rpx;
+}
+
+/* 生辰确认卡 */
+.info-row {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.info-label {
+  font-size: 28rpx;
+  color: var(--primary-500);
+  width: 100rpx;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: var(--primary-900);
+}
+
+.modify-link {
+  display: inline-block;
+  font-size: 26rpx;
+  color: var(--accent-600);
+  margin-top: 16rpx;
+}
+
+/* 八字排盘 */
+.bazi-table {
+  border: 2rpx solid var(--primary-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bazi-row {
+  display: flex;
+  border-bottom: 2rpx solid var(--primary-200);
+}
+
+.bazi-row:last-child {
+  border-bottom: none;
+}
+
+.bazi-row.header {
+  background: var(--primary-50);
+}
+
+.bazi-row.wuxing {
+  background: #fafafa;
+}
+
+.bazi-cell {
+  flex: 1;
+  padding: 24rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+  color: var(--primary-900);
+  border-right: 2rpx solid var(--primary-200);
+}
+
+.bazi-cell:last-child {
+  border-right: none;
+}
+
+.bazi-cell.highlight {
+  color: var(--accent-600);
+  font-weight: 500;
+}
+
+.bazi-row.header .bazi-cell {
+  font-size: 26rpx;
+  color: var(--primary-500);
+}
+
+.bazi-row.wuxing .bazi-cell {
+  font-size: 24rpx;
+  color: var(--primary-500);
+}
+
+.day-master {
+  margin-top: 24rpx;
+  padding: 16rpx;
+  background: var(--accent-100);
+  border-radius: var(--radius-md);
+}
+
+.day-master .label {
+  font-size: 28rpx;
+  color: var(--primary-700);
+}
+
+.day-master .value {
+  font-size: 28rpx;
+  color: var(--accent-600);
+  font-weight: 500;
+}
+
+.xiyongshen-content {
+  display: flex;
+  align-items: center;
+  padding: 16rpx;
+  background: linear-gradient(135deg, #E8F0EB, #fff);
+  border-radius: var(--radius-md);
+}
+
+/* 五行分布 */
+.wuxing-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 300rpx;
+  padding: 24rpx 0;
+}
+
+.wuxing-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.wuxing-bar-wrap {
+  width: 60rpx;
+  height: 200rpx;
+  background: var(--primary-50);
+  border-radius: var(--radius-sm);
+  position: relative;
+  margin-bottom: 16rpx;
+}
+
+.wuxing-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: var(--radius-sm);
+  transition: height 1s ease;
+}
+
+.wuxing-name {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-bottom: 4rpx;
+}
+
+.wuxing-count {
+  font-size: 24rpx;
+  color: var(--primary-500);
+}
+
+.wuxing-summary {
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+  color: var(--primary-700);
+  margin-top: 16rpx;
+  padding-top: 16rpx;
+  border-top: 2rpx solid var(--primary-200);
+}
+
+/* 喜用神 */
+.xiyongshen-content {
+  display: flex;
+  align-items: center;
+  padding: 16rpx;
+  background: linear-gradient(135deg, #f5f5f5, #fff);
+  border-radius: var(--radius-md);
+}
+
+.xiyongshen-icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+
+.icon-text {
+  font-size: 40rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.xiyongshen-info {
+  flex: 1;
+}
+
+.xiyongshen-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: var(--primary-900);
+  margin-bottom: 8rpx;
+}
+
+.xiyongshen-desc {
+  display: block;
+  font-size: 26rpx;
+  color: var(--primary-500);
+  line-height: 1.6;
+}
+
+.detail-link {
+  display: block;
+  text-align: right;
+  font-size: 26rpx;
+  color: var(--accent-600);
+  margin-top: 16rpx;
+}
+
+/* 底部操作区 */
+.footer-section {
+  margin-top: 32rpx;
+  padding: 0 0 48rpx;
+}
+
+.footer-card {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 20rpx 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.quota-hint {
+  flex: 1;
+  min-width: 0;
+}
+
+.quota-badge {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  margin-bottom: 4rpx;
+}
+
+.quota-icon {
+  font-size: 28rpx;
+  flex-shrink: 0;
+}
+
+.quota-count {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #6B8E7B;
+  white-space: nowrap;
+}
+
+.quota-desc {
+  font-size: 22rpx;
+  color: #8a8a8a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  padding: 18rpx 24rpx;
+  background: linear-gradient(135deg, #6B8E7B, #8BA89A);
+  border-radius: 40rpx;
+  box-shadow: 0 8rpx 24rpx rgba(107, 142, 123, 0.25);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 140rpx;
+}
+
+.action-btn.loading {
+  opacity: 0.8;
+  padding: 18rpx 32rpx;
+}
+
+.btn-text {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #fff;
+}
+
+.btn-arrow {
+  font-size: 24rpx;
+  color: #fff;
+  font-weight: 300;
+}

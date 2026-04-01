@@ -1,0 +1,103 @@
+<!-- 起名结果列表页 -->
+<view class="container-safe">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <text class="nav-title">起名结果</text>
+    <view class="nav-share" bindtap="shareResult">
+      <text class="share-icon">分享</text>
+    </view>
+  </view>
+
+  <!-- 生辰信息 -->
+  <view class="bazi-info">
+    <text class="bazi-text">生辰：{{bazi.year.gan}}{{bazi.year.zhi}} {{bazi.month.gan}}{{bazi.month.zhi}} {{bazi.day.gan}}{{bazi.day.zhi}} {{bazi.hour.gan}}{{bazi.hour.zhi}}</text>
+    <text class="xiyong-text">天赋：{{bazi.xiyongshen}}能量</text>
+  </view>
+
+  <!-- 结果标题 -->
+  <view class="result-header">
+    <text class="result-title">为您精选 {{names.length}} 个诗词好名（按契合度排序）</text>
+  </view>
+
+  <!-- 名字列表 -->
+  <view class="name-list">
+    <view 
+      class="name-card {{item.expanded ? 'expanded' : ''}}" 
+      wx:for="{{names}}" 
+      wx:key="index"
+      bindtap="toggleExpand"
+      data-index="{{index}}"
+    >
+      <!-- 卡片头部 -->
+      <view class="card-header">
+        <view class="rank-badge">{{index + 1}}</view>
+        <view class="name-main">
+          <text class="name-text">{{item.name}}</text>
+        </view>
+        <view class="score-badge" style="background: {{item.scoreColor}};">
+          <text class="score-value">{{item.score}}</text>
+          <text class="score-unit">分</text>
+        </view>
+      </view>
+
+      <!-- 基本信息 -->
+      <view class="card-info">
+        <text class="info-item">能量：{{item.wuxing}}</text>
+        <text class="info-item">出处：{{item.gua.name}}·{{item.gua.name.charAt(0)}}</text>
+      </view>
+
+      <!-- 寓意 -->
+      <view class="card-quote">
+        <text class="quote-text">"{{item.interpretation}}"</text>
+      </view>
+
+      <!-- 展开内容 -->
+      <view class="card-expand" wx:if="{{item.expanded}}">
+        <view class="expand-section">
+          <text class="section-title">单字解析</text>
+          <view class="char-detail" wx:for="{{item.singleChars}}" wx:for-item="char" wx:key="char">
+            <text class="char-name">{{char.char}}（{{char.pinyin}}）</text>
+            <text class="char-info">{{char.strokes}}画 五行：{{char.wuxing}}</text>
+            <text class="char-meaning">{{char.meaning}}</text>
+          </view>
+        </view>
+        <view class="expand-section">
+          <text class="section-title">诗意表达</text>
+          <text class="poetic-text">{{item.poetic}}</text>
+        </view>
+      </view>
+
+      <!-- 操作按钮 -->
+      <view class="card-actions">
+        <view class="action-btn {{item.isFavorite ? 'active' : ''}}" bindtap="toggleFavorite" data-index="{{index}}">
+          <text class="action-icon">{{item.isFavorite ? '♥' : '♡'}}</text>
+          <text class="action-text">{{item.isFavorite ? '已收藏' : '收藏'}}</text>
+        </view>
+        <view class="action-btn" bindtap="viewDetail" data-index="{{index}}">
+          <text class="action-text">查看详解 ></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 全部显示提示 -->
+  <view class="end-hint">
+    <text class="end-text">—— 已显示全部 {{names.length}} 个名字 ——</text>
+  </view>
+
+  <!-- 分享引导区 -->
+  <view class="share-section">
+    <view class="share-card">
+      <text class="share-title">💡 想要更多精选好名？</text>
+      <text class="share-desc" wx:if="{{canShare}}">分享给好友，立即解锁5个备选\n今日还可分享 {{remainingShare}} 次</text>
+      <text class="share-desc" wx:else>今日分享次数已达上限，明天再来吧</text>
+      <view class="share-actions" wx:if="{{canShare}}">
+        <button class="btn btn-primary share-btn" open-type="share">分享给好友</button>
+        <button class="btn btn-secondary poster-btn" bindtap="generatePoster">生成海报</button>
+      </view>
+    </view>
+  </view>
+</view>

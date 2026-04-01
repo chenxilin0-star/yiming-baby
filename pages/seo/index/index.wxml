@@ -1,0 +1,121 @@
+<!-- SEO静态页面 - 智能起名_免费起名_宝宝起名_新生儿起名大全 -->
+<view class="seo-page">
+  <!-- 顶部标题区 -->
+  <view class="header-section">
+    <text class="main-title">易名宝宝 - 智能起名助手</text>
+    <text class="sub-title">免费宝宝起名 | 新生儿起名大全 | 2024起名 | 2025起名</text>
+  </view>
+
+  <!-- 服务介绍 -->
+  <view class="intro-section">
+    <text class="section-title">专业智能起名服务</text>
+    <text class="intro-text">易名宝宝是一款基于传统国学文化的智能起名工具，结合五行分析、音律美学、字义寓意，为您的宝宝提供专业、吉祥、好听的名字推荐。我们致力于为每一个新生命送上一份美好的名字礼物。</text>
+  </view>
+
+  <!-- 核心功能 -->
+  <view class="features-section">
+    <text class="section-title">起名服务特色</text>
+    <view class="feature-list">
+      <view class="feature-item">
+        <text class="feature-title">智能起名</text>
+        <text class="feature-desc">AI智能分析，结合五行属性，为宝宝推荐最适合的名字组合</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-title">五行分析</text>
+        <text class="feature-desc">根据宝宝出生时间，精准分析五行属性，推荐五行平衡的好名字</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-title">音律美学</text>
+        <text class="feature-desc">注重名字的音韵搭配，朗朗上口，悦耳动听</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-title">字义寓意</text>
+        <text class="feature-desc">精选寓意美好的汉字，每个名字都有深刻的文化内涵</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-title">免费使用</text>
+        <text class="feature-desc">每日免费起名机会，让每个家庭都能享受专业的起名服务</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-title">诗经楚辞</text>
+        <text class="feature-desc">从经典诗词中汲取灵感，为宝宝取一个富有诗意的名字</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 起名指南 -->
+  <view class="guide-section">
+    <text class="section-title">宝宝起名指南</text>
+    <view class="guide-content">
+      <text class="guide-title">一、新生儿起名注意事项</text>
+      <text class="guide-text">1. 注意名字的读音是否顺口，避免拗口或不雅的谐音</text>
+      <text class="guide-text">2. 考虑名字的字形结构，书写是否美观大方</text>
+      <text class="guide-text">3. 关注名字的寓意，选择积极向上、寓意美好的字</text>
+      <text class="guide-text">4. 结合宝宝的出生时间，选择五行相配的汉字</text>
+      <text class="guide-text">5. 避免与长辈名字相同或相近，尊重家族传统</text>
+
+      <text class="guide-title">二、2024年龙宝宝起名推荐</text>
+      <text class="guide-text">2024年是甲辰龙年，龙宝宝起名宜用带水、木、玉、日、月等部首的字，如：泽、沐、琳、晨、明等。</text>
+
+      <text class="guide-title">三、2025年蛇宝宝起名推荐</text>
+      <text class="guide-text">2025年是乙巳蛇年，蛇宝宝起名宜用带艹、木、田、口等部首的字，如：萱、林、思、和等。</text>
+
+      <text class="guide-title">四、男孩起名常用字</text>
+      <text class="guide-text">浩、宇、轩、泽、铭、晨、睿、霖、辰、谦、逸、铭、然、阳、恒、宇、辰、晖、朗、瀚</text>
+
+      <text class="guide-title">五、女孩起名常用字</text>
+      <text class="guide-text">悦、欣、怡、萱、琳、瑶、晴、雪、芷、梦、诗、韵、涵、雅、宁、然、芯、语、萱、薇</text>
+    </view>
+  </view>
+
+  <!-- 热门名字推荐 -->
+  <view class="hot-names-section">
+    <text class="section-title">2024热门宝宝名字推荐</text>
+    <view class="names-grid">
+      <view class="name-category">
+        <text class="category-title">男孩名字</text>
+        <text class="names-list">浩宇、嘉泰、泽铭、晨煊、子茗、源书、彬予、星悦、宏恺、文琪、君卓、翊菲、忻泽、奕昕、启辰</text>
+      </view>
+      <view class="name-category">
+        <text class="category-title">女孩名字</text>
+        <text class="names-list">妍梓、雅娜、美丫、一禾、又芊、芷萱、梦瑶、诗涵、雅琳、欣怡、雨晴、思语、若曦、梓萱、沐瑶</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 常见问题 -->
+  <view class="faq-section">
+    <text class="section-title">起名常见问题</text>
+    <view class="faq-list">
+      <view class="faq-item">
+        <text class="faq-q">Q：如何给宝宝起一个好名字？</text>
+        <text class="faq-a">A：好名字需要考虑音、形、义三个方面。读音要朗朗上口，字形要美观易写，寓意要美好吉祥。同时可以结合宝宝的出生时间，选择五行相配的字。</text>
+      </view>
+      <view class="faq-item">
+        <text class="faq-q">Q：宝宝起名需要避讳什么？</text>
+        <text class="faq-a">A：避免使用生僻字、多音字；避免与长辈名字重复；避免不雅的谐音；避免寓意不好的字；避免笔画过于复杂的字。</text>
+      </view>
+      <view class="faq-item">
+        <text class="faq-q">Q：双胞胎宝宝如何起名？</text>
+        <text class="faq-a">A：双胞胎起名可以采用对仗法，如使用相同部首的字，或使用成对的词语。也可以使用相近的寓意，如"文博、文雅"、"明辉、明耀"等。</text>
+      </view>
+      <view class="faq-item">
+        <text class="faq-q">Q：易名宝宝起名服务是免费的吗？</text>
+        <text class="faq-a">A：是的，易名宝宝提供每日免费起名机会，让您可以免费体验专业的智能起名服务。分享给好友还可以获得更多起名机会。</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 服务关键词 -->
+  <view class="keywords-section">
+    <text class="section-title">服务关键词</text>
+    <text class="keywords-list">宝宝起名 | 婴儿取名 | 新生儿起名 | 免费起名 | 智能起名 | 2024起名 | 2025起名 | 龙宝宝起名 | 蛇宝宝起名 | 男孩名字 | 女孩名字 | 五行起名 | 国学起名 | 诗意起名 | 诗经起名 | 楚辞起名 | 好听的名字 | 吉祥名字 | 起名大全</text>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="footer-section">
+    <text class="footer-text">易名宝宝 - 您的智能起名专家</text>
+    <text class="footer-text">专业 | 智能 | 免费 | 便捷</text>
+    <text class="copyright">Copyright 2024 易名宝宝 All Rights Reserved</text>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+<!-- 分享海报页 -->
+<view class="container-safe">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <text class="nav-title">生成海报</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 海报预览区 -->
+  <view class="poster-preview">
+    <canvas 
+      type="2d" 
+      id="posterCanvas" 
+      class="poster-canvas"
+      style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"
+    ></canvas>
+    
+    <!-- 模板指示器 -->
+    <view class="template-indicator">
+      <view 
+        class="indicator-dot {{currentTemplate === index ? 'active' : ''}}" 
+        wx:for="{{templates}}" 
+        wx:key="index"
+        bindtap="selectTemplate"
+        data-index="{{index}}"
+      ></view>
+    </view>
+  </view>
+
+  <!-- 模板选择 -->
+  <view class="template-section">
+    <text class="section-title">选择模板：</text>
+    <view class="template-list">
+      <view 
+        class="template-item {{currentTemplate === index ? 'active' : ''}}" 
+        wx:for="{{templates}}" 
+        wx:key="index"
+        bindtap="selectTemplate"
+        data-index="{{index}}"
+      >
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 自定义文案 -->
+  <view class="custom-text-section">
+    <text class="section-title">自定义文案（选填）：</text>
+    <textarea 
+      class="custom-textarea" 
+      placeholder="我家龙宝宝的候选名，大家觉得怎么样？"
+      maxlength="50"
+      bindinput="onCustomTextInput"
+      value="{{customText}}"
+    ></textarea>
+    <text class="text-count">{{customText.length}}/50</text>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-section">
+    <button class="btn btn-primary save-btn" bindtap="savePoster">保存到相册</button>
+    <button class="btn btn-secondary share-btn" bindtap="sharePoster">直接分享</button>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "quota-indicator": "/components/quota-indicator/quota-indicator"
+  },
+  "navigationBarTitleText": "易名宝宝"
+}

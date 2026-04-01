@@ -1,0 +1,70 @@
+<!-- 我的收藏页 -->
+<view class="container-safe">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <text class="nav-title">我的收藏</text>
+    <view class="nav-edit" bindtap="toggleEdit">
+      <text class="edit-text">{{isEditing ? '完成' : '编辑'}}</text>
+    </view>
+  </view>
+
+  <!-- 收藏列表 -->
+  <view class="favorites-list" wx:if="{{favorites.length > 0}}">
+    <view 
+      class="favorite-item {{item.selected ? 'selected' : ''}}" 
+      wx:for="{{favorites}}" 
+      wx:key="_id"
+      bindtap="selectItem"
+      data-index="{{index}}"
+    >
+      <view class="select-box" wx:if="{{isEditing}}">
+        <view class="select-circle {{item.selected ? 'checked' : ''}}">
+          <text wx:if="{{item.selected}}">✓</text>
+        </view>
+      </view>
+      <view class="item-content">
+        <view class="item-header">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-score" style="color: {{item.scoreColor}};">{{item.score}}分</text>
+        </view>
+        <view class="item-info">
+          <text class="info-item">五行：{{item.wuxing}}</text>
+        </view>
+        <view class="item-quote">
+          <text>"{{item.interpretation}}"</text>
+        </view>
+      </view>
+      <view class="item-arrow" wx:if="{{!isEditing}}">></view>
+    </view>
+
+    <!-- 加载更多 -->
+    <view class="load-more" wx:if="{{hasMore}}">
+      <text bindtap="loadMore">加载更多</text>
+    </view>
+  </view>
+
+  <!-- 编辑模式底部操作 -->
+  <view class="edit-actions" wx:if="{{isEditing && favorites.length > 0}}">
+    <view class="select-all" bindtap="selectAll">
+      <view class="select-circle {{allSelected ? 'checked' : ''}}">
+        <text wx:if="{{allSelected}}">✓</text>
+      </view>
+      <text>全选</text>
+    </view>
+    <button class="btn btn-primary compare-btn" bindtap="compareSelected" wx:if="{{selectedCount >= 2}}">
+      对比选中({{selectedCount}})
+    </button>
+    <button class="btn delete-btn" bindtap="deleteSelected">删除</button>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{favorites.length === 0}}">
+    <view class="empty-icon">⭐</view>
+    <text class="empty-title">还没有收藏的名字</text>
+    <text class="empty-desc">去取几个心仪的好名吧</text>
+    <button class="btn btn-primary go-btn" bindtap="goToNaming">去起名</button>
+  </view>
+</view>

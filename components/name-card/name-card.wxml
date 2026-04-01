@@ -1,0 +1,16 @@
+<!-- 名字卡片组件 -->
+<view class="name-card {{expanded ? 'expanded' : ''}}" bindtap="onTap">
+  <view class="card-main">
+    <text class="rank">{{rank}}</text>
+    <view class="info">
+      <text class="name">{{nameData.name}}</text>
+      <text class="meta">五行：{{nameData.wuxing}} | 卦象：{{nameData.gua.name}}</text>
+    </view>
+    <view class="score" style="background: {{scoreColor}};">
+      <text class="score-value">{{nameData.score}}</text>
+    </view>
+  </view>
+  <view class="card-quote" wx:if="{{showQuote}}">
+    <text>"{{nameData.interpretation}}"</text>
+  </view>
+</view>

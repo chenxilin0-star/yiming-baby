@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -c:*)",
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(node:*)",
+      "Bash(npm search:*)",
+      "Bash(xxd:*)",
+      "WebSearch"
+    ]
+  }
+}

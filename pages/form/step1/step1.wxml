@@ -1,0 +1,139 @@
+<!-- 步骤一：基础信息 -->
+<view class="page-container">
+  <!-- 顶部装饰 -->
+  <view class="header-decoration">
+    <view class="decoration-circle"></view>
+    <view class="decoration-line"></view>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">‹</text>
+    </view>
+    <view class="nav-content">
+      <text class="nav-title">宝宝信息</text>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: 50%;"></view>
+      </view>
+    </view>
+    <text class="nav-step">1/2</text>
+  </view>
+
+  <!-- 欢迎语 -->
+  <view class="welcome-section">
+    <text class="welcome-title">让我们开始吧</text>
+    <text class="welcome-subtitle">填写基本信息，系统将为您推荐吉祥好名</text>
+  </view>
+
+  <!-- 表单卡片 -->
+  <view class="form-card">
+    <!-- 姓氏输入 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">姓氏</text>
+        <text class="item-required">*</text>
+      </view>
+      <view class="input-box {{focusSurname ? 'focus' : ''}} {{form.surname ? 'has-value' : ''}}">
+        <input 
+          class="surname-input"
+          type="text"
+          placeholder="请输入姓氏"
+          placeholder-class="placeholder"
+          value="{{inputSurname}}"
+          bindinput="onSurnameInput"
+          bindfocus="onSurnameFocus"
+          bindblur="onSurnameBlur"
+        />
+        <view class="input-actions">
+          <view class="clear-btn" wx:if="{{form.surname}}" bindtap="clearSurname">
+            <text class="clear-icon">×</text>
+          </view>
+        </view>
+      </view>
+      <text class="input-tip">支持单姓和复姓（如欧阳、司马）</text>
+      
+      <!-- 姓氏快捷选择 -->
+      <view class="quick-surnames" wx:if="{{showQuickSurnames}}">
+        <text class="quick-title">热门姓氏</text>
+        <view class="surname-tags">
+          <view 
+            class="surname-tag {{form.surname === item ? 'active' : ''}}"
+            wx:for="{{hotSurnames}}"
+            wx:key="*this"
+            bindtap="selectSurname"
+            data-surname="{{item}}"
+          >{{item}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 性别选择 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">性别</text>
+        <text class="item-required">*</text>
+      </view>
+      <view class="gender-group">
+        <view 
+          class="gender-option {{form.gender === 1 ? 'active' : ''}}"
+          bindtap="selectGender"
+          data-gender="1"
+        >
+          <view class="gender-icon-wrap boy">
+            <text class="gender-symbol">♂</text>
+          </view>
+          <text class="gender-name">男孩</text>
+          <view class="check-icon" wx:if="{{form.gender === 1}}">✓</view>
+        </view>
+        <view 
+          class="gender-option {{form.gender === 2 ? 'active' : ''}}"
+          bindtap="selectGender"
+          data-gender="2"
+        >
+          <view class="gender-icon-wrap girl">
+            <text class="gender-symbol">♀</text>
+          </view>
+          <text class="gender-name">女孩</text>
+          <view class="check-icon" wx:if="{{form.gender === 2}}">✓</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 起名用途 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">起名用途</text>
+        <text class="item-required">*</text>
+      </view>
+      <view class="purpose-list">
+        <view 
+          class="purpose-item {{form.purpose === item.value ? 'active' : ''}}"
+          wx:for="{{purposeOptions}}"
+          wx:key="value"
+          bindtap="selectPurpose"
+          data-value="{{item.value}}"
+        >
+          <view class="purpose-icon">{{item.icon}}</view>
+          <view class="purpose-info">
+            <text class="purpose-name">{{item.label}}</text>
+            <text class="purpose-desc">{{item.desc}}</text>
+          </view>
+          <view class="purpose-check">{{form.purpose === item.value ? '✓' : ''}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="footer-area">
+    <view class="info-badge">
+      <text class="badge-icon">🎁</text>
+      <text class="badge-text">每日免费起名1次</text>
+    </view>
+    <button class="submit-btn {{isFormValid ? 'active' : 'disabled'}}" bindtap="nextStep">
+      <text class="btn-text">下一步</text>
+      <text class="btn-arrow">→</text>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,141 @@
+<!-- 名字详情页 -->
+<view class="container-safe">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <text class="nav-title">名字详解</text>
+    <view class="nav-favorite" bindtap="toggleFavorite">
+      <text class="favorite-icon {{isFavorite ? 'active' : ''}}">{{isFavorite ? '♥' : '♡'}}</text>
+    </view>
+  </view>
+
+  <!-- 名字主展示区 -->
+  <view class="name-hero">
+    <text class="name-text">{{nameData.name}}</text>
+    <view class="name-divider"></view>
+    <view class="score-section">
+      <text class="score-label">综合评分</text>
+      <text class="score-value" style="color: {{scoreColor}};">{{nameData.score}}</text>
+      <text class="score-unit">分</text>
+    </view>
+    <view class="name-tags">
+      <text class="tag tag-primary">{{scoreLevel}}</text>
+      <text class="tag">能量相生</text>
+      <text class="tag">音律和谐</text>
+    </view>
+  </view>
+
+  <!-- 单字解析 -->
+  <view class="card">
+    <text class="card-title">单字解析</text>
+    <view class="char-card" wx:for="{{nameData.singleChars}}" wx:key="char">
+      <view class="char-header">
+        <text class="char-name">{{item.char}}（{{item.pinyin}}）</text>
+        <text class="char-meta">{{item.strokes}}画 {{item.wuxing}}能量</text>
+        <view class="wuxing-badge" style="background: {{wuxingColors[item.wuxing]}};">{{item.wuxing}}</view>
+      </view>
+      <view class="char-body">
+        <text class="meaning-label">本义：</text>
+        <text class="meaning-text">{{item.meaning}}</text>
+        <text class="source-label">出处：</text>
+        <text class="source-text">{{item.source || '《说文解字》'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 音律分析 -->
+  <view class="card">
+    <text class="card-title">音律分析</text>
+    <view class="yinylv-section">
+      <view class="pinyin-row">
+        <text class="pinyin-item" wx:for="{{pinyinArray}}" wx:key="*this">{{item}}</text>
+      </view>
+      <view class="shengdiao-row">
+        <text class="shengdiao-label">声调：</text>
+        <text class="shengdiao-value">{{shengdiaoDesc}}</text>
+      </view>
+      <view class="yunmu-row">
+        <text class="yunmu-label">韵母：</text>
+        <text class="yunmu-value">{{yunmuDesc}}</text>
+      </view>
+      <button class="play-btn" bindtap="playPinyin">
+        <text class="play-icon">▶</text>
+        <text class="play-text">播放读音</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 诗词典故 -->
+  <view class="card">
+    <text class="card-title">诗词典故</text>
+    <view class="gua-section">
+      <view class="gua-header">
+        <text class="gua-name">出自《诗词》·{{nameData.gua.name}}</text>
+        <text class="gua-yao">{{nameData.gua.meaning}}</text>
+      </view>
+      <view class="gua-meaning">
+        <text class="meaning-item">寓意：{{guaSymbol}}</text>
+        <text class="meaning-item">品格：{{guaPersonality}}</text>
+        <text class="meaning-item">期许：{{guaCareer}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 现代寓意 -->
+  <view class="card">
+    <text class="card-title">现代寓意</text>
+    <view class="meaning-section">
+      <text class="modern-meaning">{{modernInterpretation}}</text>
+    </view>
+  </view>
+
+  <!-- 五格数理 -->
+  <view class="card">
+    <text class="card-title">五格数理</text>
+    <view class="wuge-section">
+      <view class="wuge-row">
+        <view class="wuge-item">
+          <text class="wuge-name">天格</text>
+          <text class="wuge-value">{{wuge.tiange.num}}（{{wuge.tiange.wuxing}}）</text>
+          <text class="wuge-jixiong {{wuge.tiange.jixiong === '吉' ? 'ji' : 'xiong'}}">{{wuge.tiange.jixiong}}</text>
+        </view>
+        <view class="wuge-item">
+          <text class="wuge-name">人格</text>
+          <text class="wuge-value">{{wuge.renge.num}}（{{wuge.renge.wuxing}}）</text>
+          <text class="wuge-jixiong {{wuge.renge.jixiong === '吉' ? 'ji' : 'xiong'}}">{{wuge.renge.jixiong}}</text>
+        </view>
+      </view>
+      <view class="wuge-row">
+        <view class="wuge-item">
+          <text class="wuge-name">地格</text>
+          <text class="wuge-value">{{wuge.dige.num}}（{{wuge.dige.wuxing}}）</text>
+          <text class="wuge-jixiong {{wuge.dige.jixiong === '吉' ? 'ji' : 'xiong'}}">{{wuge.dige.jixiong}}</text>
+        </view>
+        <view class="wuge-item">
+          <text class="wuge-name">外格</text>
+          <text class="wuge-value">{{wuge.waige.num}}（{{wuge.waige.wuxing}}）</text>
+          <text class="wuge-jixiong {{wuge.waige.jixiong === '吉' ? 'ji' : 'xiong'}}">{{wuge.waige.jixiong}}</text>
+        </view>
+      </view>
+      <view class="wuge-row total">
+        <view class="wuge-item">
+          <text class="wuge-name">总格</text>
+          <text class="wuge-value">{{wuge.zongge.num}}（{{wuge.zongge.wuxing}}）</text>
+          <text class="wuge-jixiong {{wuge.zongge.jixiong === '吉' ? 'ji' : 'xiong'}}">{{wuge.zongge.jixiong}}</text>
+        </view>
+      </view>
+      <text class="wuge-hint" wx:if="{{wuge.zongge.jixiong !== '吉'}}">总格稍弱，但人格地格大吉可补，整体仍属上吉</text>
+    </view>
+  </view>
+
+  <!-- 底部操作 -->
+  <view class="footer-actions">
+    <button class="btn btn-primary favorite-btn" bindtap="toggleFavorite">
+      {{isFavorite ? '取消收藏' : '收藏此名'}}
+    </button>
+    <button class="btn btn-secondary share-btn" open-type="share">分享</button>
+    <button class="btn btn-text regenerate-btn" bindtap="regenerate">重新生成</button>
+  </view>
+</view>

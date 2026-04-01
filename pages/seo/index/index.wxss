@@ -1,0 +1,245 @@
+/* SEO静态页面样式 */
+
+.seo-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #faf8f5 0%, #f5f0e8 100%);
+  padding: 40rpx 32rpx;
+  padding-top: calc(80rpx + env(safe-area-inset-top));
+}
+
+/* 顶部标题区 */
+.header-section {
+  text-align: center;
+  padding: 60rpx 0 40rpx;
+  border-bottom: 2rpx solid #e8e4df;
+  margin-bottom: 40rpx;
+}
+
+.main-title {
+  display: block;
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #c45c48;
+  margin-bottom: 20rpx;
+  letter-spacing: 4rpx;
+}
+
+.sub-title {
+  display: block;
+  font-size: 26rpx;
+  color: #8a8a8a;
+  line-height: 1.6;
+}
+
+/* 通用标题 */
+.section-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 30rpx;
+  padding-left: 20rpx;
+  border-left: 6rpx solid #c45c48;
+}
+
+/* 服务介绍 */
+.intro-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.intro-text {
+  display: block;
+  font-size: 28rpx;
+  color: #4a4a4a;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* 核心功能 */
+.features-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.feature-item {
+  width: calc(50% - 12rpx);
+  background: #faf8f5;
+  border-radius: 16rpx;
+  padding: 30rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.feature-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #c45c48;
+  margin-bottom: 12rpx;
+}
+
+.feature-desc {
+  display: block;
+  font-size: 24rpx;
+  color: #6a6a6a;
+  line-height: 1.6;
+}
+
+/* 起名指南 */
+.guide-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.guide-content {
+  padding: 0;
+}
+
+.guide-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 30rpx 0 16rpx;
+}
+
+.guide-title:first-child {
+  margin-top: 0;
+}
+
+.guide-text {
+  display: block;
+  font-size: 26rpx;
+  color: #4a4a4a;
+  line-height: 1.8;
+  margin-bottom: 12rpx;
+  padding-left: 20rpx;
+}
+
+/* 热门名字 */
+.hot-names-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.names-grid {
+  display: flex;
+  gap: 24rpx;
+}
+
+.name-category {
+  flex: 1;
+  background: #faf8f5;
+  border-radius: 16rpx;
+  padding: 30rpx 24rpx;
+}
+
+.category-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #c45c48;
+  margin-bottom: 16rpx;
+  text-align: center;
+}
+
+.names-list {
+  display: block;
+  font-size: 24rpx;
+  color: #4a4a4a;
+  line-height: 1.8;
+}
+
+/* 常见问题 */
+.faq-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.faq-list {
+  padding: 0;
+}
+
+.faq-item {
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f0ece6;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-q {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12rpx;
+}
+
+.faq-a {
+  display: block;
+  font-size: 26rpx;
+  color: #6a6a6a;
+  line-height: 1.8;
+  padding-left: 20rpx;
+}
+
+/* 关键词 */
+.keywords-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.keywords-list {
+  display: block;
+  font-size: 24rpx;
+  color: #8a8a8a;
+  line-height: 2;
+  word-break: break-all;
+}
+
+/* 底部信息 */
+.footer-section {
+  text-align: center;
+  padding: 40rpx 0;
+  border-top: 2rpx solid #e8e4df;
+}
+
+.footer-text {
+  display: block;
+  font-size: 26rpx;
+  color: #c45c48;
+  margin-bottom: 8rpx;
+}
+
+.copyright {
+  display: block;
+  font-size: 22rpx;
+  color: #a0a0a0;
+  margin-top: 20rpx;
+}

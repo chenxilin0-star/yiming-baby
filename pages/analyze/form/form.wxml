@@ -1,0 +1,140 @@
+<!-- 名字分析表单页 -->
+<view class="container">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <text class="nav-title">名字分析</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 表单卡片 -->
+  <view class="form-card">
+    <view class="card-header">
+      <text class="card-title">已有名字分析</text>
+      <text class="card-subtitle">根据生辰信息，深度分析名字</text>
+    </view>
+
+    <!-- 名字输入 -->
+    <view class="form-section">
+      <text class="form-label">请输入名字</text>
+      <view class="name-input-row">
+        <input
+          class="name-input"
+          type="text"
+          placeholder="姓氏"
+          value="{{surname}}"
+          bindinput="onSurnameInput"
+          adjust-position="{{true}}"
+        />
+        <input
+          class="name-input main-name"
+          type="text"
+          placeholder="名字"
+          value="{{name}}"
+          bindinput="onNameInput"
+          adjust-position="{{true}}"
+        />
+      </view>
+      <text class="form-hint">支持任意长度的名字</text>
+    </view>
+
+    <!-- 生辰信息 -->
+    <view class="form-section">
+      <text class="form-label">请选择生辰日期</text>
+
+      <!-- 日期选择 -->
+      <view class="date-picker-row">
+        <picker
+          class="date-picker"
+          mode="date"
+          value="{{solarDate}}"
+          start="1900-01-01"
+          end="2100-12-31"
+          bindchange="onDateChange"
+        >
+          <view class="picker-display">
+            <text class="picker-label">公历日期</text>
+            <text class="picker-value">{{solarDate || '请选择'}}</text>
+          </view>
+        </picker>
+      </view>
+
+      <!-- 时间选择 -->
+      <view class="time-picker-row">
+        <picker
+          class="time-picker"
+          mode="time"
+          value="{{solarTime}}"
+          bindchange="onTimeChange"
+        >
+          <view class="picker-display">
+            <text class="picker-label">出生时辰</text>
+            <text class="picker-value">{{solarTime || '请选择'}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 性别选择 -->
+    <view class="form-section">
+      <text class="form-label">请选择性别</text>
+      <view class="gender-row">
+        <view
+          class="gender-option {{gender === 1 ? 'active' : ''}}"
+          bindtap="selectGender"
+          data-gender="1"
+        >
+          <text class="gender-icon">👦</text>
+          <text class="gender-label">男孩</text>
+        </view>
+        <view
+          class="gender-option {{gender === 2 ? 'active' : ''}}"
+          bindtap="selectGender"
+          data-gender="2"
+        >
+          <text class="gender-icon">👧</text>
+          <text class="gender-label">女孩</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 提交按钮 -->
+    <view class="submit-section">
+      <button
+        class="submit-btn {{canSubmit ? '' : 'disabled'}}"
+        bindtap="analyzeName"
+        disabled="{{!canSubmit}}"
+      >
+        开始分析
+      </button>
+      <text class="submit-hint">基于生辰信息 · 深度分析 · 专业打分</text>
+    </view>
+  </view>
+
+  <!-- 说明卡片 -->
+  <view class="info-card">
+    <view class="info-item">
+      <text class="info-icon">📊</text>
+      <view class="info-content">
+        <text class="info-title">五行分析</text>
+        <text class="info-desc">基于五行属性，分析名字五行是否平衡</text>
+      </view>
+    </view>
+    <view class="info-item">
+      <text class="info-icon">📐</text>
+      <view class="info-content">
+        <text class="info-title">三才五格</text>
+        <text class="info-desc">计算天格、地格、人格等五格数理</text>
+      </view>
+    </view>
+    <view class="info-item">
+      <text class="info-icon">⭐</text>
+      <view class="info-content">
+        <text class="info-title">综合评分</text>
+        <text class="info-desc">多维度综合评分，给出专业建议</text>
+      </view>
+    </view>
+  </view>
+</view>

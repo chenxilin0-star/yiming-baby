@@ -1,0 +1,146 @@
+/* 分享海报页 */
+.container-safe {
+  padding: 0 32rpx 48rpx;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  margin-bottom: 24rpx;
+}
+
+.nav-back {
+  width: 80rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  font-size: 40rpx;
+  color: var(--primary-900);
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: var(--primary-900);
+}
+
+.nav-placeholder {
+  width: 80rpx;
+}
+
+/* 海报预览区 */
+.poster-preview {
+  background: var(--primary-50);
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  margin-bottom: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster-canvas {
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 24rpx;
+}
+
+/* 模板指示器 */
+.template-indicator {
+  display: flex;
+  gap: 16rpx;
+}
+
+.indicator-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: var(--primary-200);
+  transition: all 0.2s;
+}
+
+.indicator-dot.active {
+  width: 32rpx;
+  border-radius: var(--radius-full);
+  background: var(--accent-600);
+}
+
+/* 模板选择 */
+.template-section {
+  margin-bottom: 32rpx;
+}
+
+.section-title {
+  display: block;
+  font-size: 30rpx;
+  color: var(--primary-700);
+  margin-bottom: 16rpx;
+}
+
+.template-list {
+  display: flex;
+  gap: 16rpx;
+}
+
+.template-item {
+  padding: 16rpx 32rpx;
+  background: var(--primary-50);
+  border: 2rpx solid transparent;
+  border-radius: var(--radius-full);
+  font-size: 28rpx;
+  color: var(--primary-700);
+  transition: all 0.2s;
+}
+
+.template-item.active {
+  background: var(--accent-100);
+  border-color: var(--accent-600);
+  color: var(--accent-600);
+}
+
+/* 自定义文案 */
+.custom-text-section {
+  margin-bottom: 48rpx;
+  position: relative;
+}
+
+.custom-textarea {
+  width: 100%;
+  height: 160rpx;
+  background: #fff;
+  border: 2rpx solid var(--primary-200);
+  border-radius: var(--radius-md);
+  padding: 24rpx;
+  font-size: 30rpx;
+  color: var(--primary-900);
+}
+
+.custom-textarea:focus {
+  border-color: var(--accent-600);
+}
+
+.text-count {
+  position: absolute;
+  right: 16rpx;
+  bottom: 16rpx;
+  font-size: 24rpx;
+  color: var(--primary-500);
+}
+
+/* 操作按钮 */
+.action-section {
+  display: flex;
+  gap: 24rpx;
+}
+
+.save-btn, .share-btn {
+  flex: 1;
+}

@@ -1,0 +1,9 @@
+{
+  "name": "recordShare",
+  "version": "1.0.0",
+  "description": "记录分享并奖励次数",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

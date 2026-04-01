@@ -1,0 +1,10 @@
+{
+  "name": "getBazi",
+  "version": "1.0.0",
+  "description": "计算八字",
+  "main": "index.js",
+  "dependencies": {
+    "lunar-javascript": "^1.7.7",
+    "wx-server-sdk": "latest"
+  }
+}

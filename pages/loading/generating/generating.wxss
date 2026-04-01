@@ -1,0 +1,158 @@
+/* 生成中Loading页 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 64rpx;
+  background: linear-gradient(180deg, #fafafa 0%, #f0f0f0 100%);
+}
+
+/* 太极动画 */
+.taiji-container {
+  margin-bottom: 64rpx;
+}
+
+.taiji {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background: linear-gradient(to right, #1a1a1a 50%, #fff 50%);
+  position: relative;
+  animation: rotate 3s linear infinite;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+}
+
+.taiji-yin {
+  position: absolute;
+  top: 0;
+  left: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #1a1a1a;
+}
+
+.taiji-yang {
+  position: absolute;
+  bottom: 0;
+  left: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.taiji-dot {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  left: 85rpx;
+}
+
+.taiji-dot.black {
+  top: 35rpx;
+  background: #fff;
+}
+
+.taiji-dot.white {
+  bottom: 35rpx;
+  background: #1a1a1a;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 状态区域 */
+.status-section {
+  width: 100%;
+  max-width: 600rpx;
+}
+
+.status-title {
+  display: block;
+  text-align: center;
+  font-size: 36rpx;
+  color: var(--primary-900);
+  margin-bottom: 48rpx;
+}
+
+/* 进度条 */
+.progress-bar {
+  margin-bottom: 48rpx;
+}
+
+.progress-track {
+  height: 12rpx;
+  background: var(--primary-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 16rpx;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-600), #e07a6a);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+  color: var(--primary-500);
+}
+
+/* 任务列表 */
+.task-list {
+  margin-bottom: 48rpx;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+  color: var(--primary-500);
+  transition: all 0.3s;
+}
+
+.task-item.done {
+  color: var(--success);
+}
+
+.task-item.active {
+  color: var(--accent-600);
+}
+
+.task-icon {
+  width: 48rpx;
+  font-size: 28rpx;
+}
+
+.task-text {
+  font-size: 30rpx;
+}
+
+.time-hint {
+  display: block;
+  text-align: center;
+  font-size: 26rpx;
+  color: var(--primary-500);
+}
+
+/* 取消按钮 */
+.cancel-section {
+  position: fixed;
+  bottom: 64rpx;
+}
+
+.cancel-btn {
+  font-size: 28rpx;
+  color: var(--primary-500);
+  padding: 16rpx 32rpx;
+}

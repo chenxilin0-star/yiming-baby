@@ -1,0 +1,177 @@
+<!-- 名字分析结果页 -->
+<view class="container">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <text class="nav-title">分析结果</text>
+    <view class="nav-action" bindtap="goHome">
+      <text class="nav-text">首页</text>
+    </view>
+  </view>
+
+  <!-- 名字卡片 -->
+  <view class="name-card">
+    <view class="name-header">
+      <text class="name-main">{{result.input.fullName}}</text>
+      <view class="score-badge" style="background: {{result.scoreColor}};">
+        <text class="score-value">{{result.score}}</text>
+        <text class="score-unit">分</text>
+      </view>
+    </view>
+    <view class="name-info">
+      <text class="info-tag">{{result.input.gender === 1 ? '男孩' : '女孩'}}</text>
+      <text class="info-divider">·</text>
+      <text class="info-text">{{result.bazi.solarDate}} {{result.bazi.solarTime}}</text>
+    </view>
+  </view>
+
+  <!-- 生辰信息 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-title">生辰信息</text>
+    </view>
+    <view class="bazi-grid">
+      <view class="bazi-item">
+        <text class="bazi-label">年</text>
+        <text class="bazi-value">{{result.bazi.year.gan}}{{result.bazi.year.zhi}}</text>
+        <text class="bazi-wuxing">{{result.bazi.year.wuxing}}</text>
+      </view>
+      <view class="bazi-item">
+        <text class="bazi-label">月</text>
+        <text class="bazi-value">{{result.bazi.month.gan}}{{result.bazi.month.zhi}}</text>
+        <text class="bazi-wuxing">{{result.bazi.month.wuxing}}</text>
+      </view>
+      <view class="bazi-item">
+        <text class="bazi-label">日</text>
+        <text class="bazi-value">{{result.bazi.day.gan}}{{result.bazi.day.zhi}}</text>
+        <text class="bazi-wuxing">{{result.bazi.day.wuxing}}</text>
+      </view>
+      <view class="bazi-item">
+        <text class="bazi-label">时</text>
+        <text class="bazi-value">{{result.bazi.hour.gan}}{{result.bazi.hour.zhi}}</text>
+        <text class="bazi-wuxing">{{result.bazi.hour.wuxing}}</text>
+      </view>
+    </view>
+    <view class="bazi-footer">
+      <text class="footer-label">宜用五行</text>
+      <text class="footer-value">{{result.bazi.xiyongshen}}</text>
+      <text class="footer-label">农历</text>
+      <text class="footer-value">{{result.bazi.lunarDate}}</text>
+    </view>
+  </view>
+
+  <!-- 五行分析 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-title">五行分析</text>
+    </view>
+    <view class="wuxing-chart">
+      <view class="chart-item">
+        <text class="chart-label">金</text>
+        <view class="chart-bar">
+          <view class="bar-fill gold" style="width: {{wuxingPercentEn.jin}}%;"></view>
+        </view>
+        <text class="chart-value">{{result.bazi.wuxing['金'] || 0}}</text>
+      </view>
+      <view class="chart-item">
+        <text class="chart-label">木</text>
+        <view class="chart-bar">
+          <view class="bar-fill wood" style="width: {{wuxingPercentEn.mu}}%;"></view>
+        </view>
+        <text class="chart-value">{{result.bazi.wuxing['木'] || 0}}</text>
+      </view>
+      <view class="chart-item">
+        <text class="chart-label">水</text>
+        <view class="chart-bar">
+          <view class="bar-fill water" style="width: {{wuxingPercentEn.shui}}%;"></view>
+        </view>
+        <text class="chart-value">{{result.bazi.wuxing['水'] || 0}}</text>
+      </view>
+      <view class="chart-item">
+        <text class="chart-label">火</text>
+        <view class="chart-bar">
+          <view class="bar-fill fire" style="width: {{wuxingPercentEn.huo}}%;"></view>
+        </view>
+        <text class="chart-value">{{result.bazi.wuxing['火'] || 0}}</text>
+      </view>
+      <view class="chart-item">
+        <text class="chart-label">土</text>
+        <view class="chart-bar">
+          <view class="bar-fill earth" style="width: {{wuxingPercentEn.tu}}%;"></view>
+        </view>
+        <text class="chart-value">{{result.bazi.wuxing['土'] || 0}}</text>
+      </view>
+    </view>
+    <view class="wuxing-summary {{result.wuxingAnalysis.balance === '五行平衡' ? 'good' : result.wuxingAnalysis.balance === '五行偏重' ? 'warning' : 'danger'}}">
+      <text class="summary-icon">{{result.wuxingAnalysis.balance === '五行平衡' ? '✓' : '⚠'}}</text>
+      <text class="summary-text">{{result.wuxingAnalysis.balance}}</text>
+    </view>
+    <view class="advice-list">
+      <text class="advice-text">{{result.wuxingAnalysis.advice}}</text>
+    </view>
+  </view>
+
+  <!-- 五格数理 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-title">五格数理</text>
+    </view>
+    <view class="wuge-grid">
+      <view class="wuge-item {{result.wuge.tiange.jixiong === '吉' ? 'lucky' : 'unlucky'}}">
+        <text class="wuge-label">天格</text>
+        <text class="wuge-value">{{result.wuge.tiange.num}}</text>
+        <text class="wuge-wuxing">{{result.wuge.tiange.wuxing}}</text>
+        <text class="wuge-jixiong">{{result.wuge.tiange.jixiong}}</text>
+      </view>
+      <view class="wuge-item {{result.wuge.renge.jixiong === '吉' ? 'lucky' : 'unlucky'}}">
+        <text class="wuge-label">人格</text>
+        <text class="wuge-value">{{result.wuge.renge.num}}</text>
+        <text class="wuge-wuxing">{{result.wuge.renge.wuxing}}</text>
+        <text class="wuge-jixiong">{{result.wuge.renge.jixiong}}</text>
+      </view>
+      <view class="wuge-item {{result.wuge.dige.jixiong === '吉' ? 'lucky' : 'unlucky'}}">
+        <text class="wuge-label">地格</text>
+        <text class="wuge-value">{{result.wuge.dige.num}}</text>
+        <text class="wuge-wuxing">{{result.wuge.dige.wuxing}}</text>
+        <text class="wuge-jixiong">{{result.wuge.dige.jixiong}}</text>
+      </view>
+      <view class="wuge-item {{result.wuge.waige.jixiong === '吉' ? 'lucky' : 'unlucky'}}">
+        <text class="wuge-label">外格</text>
+        <text class="wuge-value">{{result.wuge.waige.num}}</text>
+        <text class="wuge-wuxing">{{result.wuge.waige.wuxing}}</text>
+        <text class="wuge-jixiong">{{result.wuge.waige.jixiong}}</text>
+      </view>
+      <view class="wuge-item {{result.wuge.zongge.jixiong === '吉' ? 'lucky' : 'unlucky'}}">
+        <text class="wuge-label">总格</text>
+        <text class="wuge-value">{{result.wuge.zongge.num}}</text>
+        <text class="wuge-wuxing">{{result.wuge.zongge.wuxing}}</text>
+        <text class="wuge-jixiong">{{result.wuge.zongge.jixiong}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 优化建议 -->
+  <view class="section-card suggestions">
+    <view class="section-header">
+      <text class="section-title">优化建议</text>
+    </view>
+    <view class="suggestion-list">
+      <view class="suggestion-item" wx:for="{{result.suggestions}}" wx:key="*this">
+        <text class="suggestion-icon">💡</text>
+        <text class="suggestion-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作 -->
+  <view class="footer-actions">
+    <button class="action-btn secondary" bindtap="shareResult">
+      <text class="btn-text">分享结果</text>
+    </button>
+    <button class="action-btn primary" bindtap="goHome">
+      <text class="btn-text">返回首页</text>
+    </button>
+  </view>
+</view>

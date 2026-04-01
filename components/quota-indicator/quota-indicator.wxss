@@ -1,0 +1,27 @@
+/* 次数指示器 */
+.quota-indicator {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  background: #fffbe6;
+  border: 2rpx solid #ffe58f;
+  border-radius: var(--radius-md);
+}
+
+.quota-icon {
+  font-size: 40rpx;
+  margin-right: 16rpx;
+}
+
+.quota-main {
+  flex: 1;
+  font-size: 30rpx;
+  color: #d48806;
+  font-weight: 500;
+}
+
+.quota-sub {
+  font-size: 24rpx;
+  color: #d48806;
+  opacity: 0.8;
+}

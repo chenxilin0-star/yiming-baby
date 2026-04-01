@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/seo/index/index",
+    "pages/form/step1/step1",
+    "pages/form/step2/step2",
+    "pages/bazi/analysis/analysis",
+    "pages/loading/generating/generating",
+    "pages/result/list/list",
+    "pages/result/detail/detail",
+    "pages/share/poster/poster",
+    "pages/user/center/center",
+    "pages/user/favorites/favorites",
+    "pages/analyze/form/form",
+    "pages/analyze/result/result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "易名宝宝",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FDF8F3"
+  },
+  "tabBar": {
+    "color": "#8D8D8D",
+    "selectedColor": "#6B8E7B",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "智能起名"
+      },
+      {
+        "pagePath": "pages/user/center/center",
+        "text": "我的"
+      }
+    ]
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "quota-indicator": "components/quota-indicator/quota-indicator",
+    "name-card": "components/name-card/name-card"
+  }
+}

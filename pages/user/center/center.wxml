@@ -1,0 +1,177 @@
+<!-- 个人中心页 -->
+<view class="page-container">
+  <!-- 用户信息卡 -->
+  <view class="user-card">
+    <view class="user-bg">
+      <view class="bg-circle circle-1"></view>
+      <view class="bg-circle circle-2"></view>
+    </view>
+
+    <view class="user-content">
+      <!-- 未登录状态 -->
+      <block wx:if="{{!hasUserInfo}}">
+        <view class="user-info-unauthorized">
+          <view class="avatar-placeholder">
+            <text class="placeholder-icon">👤</text>
+          </view>
+          <text class="unauthorized-text">点击按钮获取微信头像昵称</text>
+          <button class="auth-btn" bindtap="checkUserInfo">授权获取</button>
+        </view>
+      </block>
+
+      <!-- 已登录状态 -->
+      <block wx:else>
+        <view class="user-info">
+          <view class="avatar-wrap">
+            <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+            <view class="avatar-badge">
+              <text class="badge-icon">✓</text>
+            </view>
+          </view>
+          <view class="user-meta">
+            <text class="user-name">{{userInfo.nickName}}</text>
+            <text class="user-id">ID: {{userId}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 授权弹窗 -->
+  <view class="auth-modal" wx:if="{{showAuthModal}}">
+    <view class="modal-mask" bindtap="cancelAuth"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">完善个人信息</text>
+      </view>
+      <view class="modal-body">
+        <view class="avatar-section">
+          <text class="section-label">头像</text>
+          <button
+            class="avatar-btn"
+            open-type="chooseAvatar"
+            bind:chooseavatar="onChooseAvatar"
+          >
+            <image
+              class="avatar-preview"
+              src="{{tempAvatarUrl || '/images/default-avatar.png'}}"
+              mode="aspectFill"
+            ></image>
+            <text class="avatar-tip">点击选择头像</text>
+          </button>
+        </view>
+
+        <view class="nickname-section">
+          <text class="section-label">昵称</text>
+          <input
+            class="nickname-input"
+            type="nickname"
+            placeholder="请输入昵称"
+            value="{{tempNickName}}"
+            bindinput="onNicknameInput"
+            maxlength="20"
+          />
+        </view>
+      </view>
+      <view class="modal-footer">
+        <button class="modal-btn cancel-btn" bindtap="cancelAuth">取消</button>
+        <button class="modal-btn confirm-btn" bindtap="confirmAuth">确认</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 服务统计 -->
+  <view class="stats-section">
+    <view class="stats-card">
+      <view class="stat-item" bindtap="goToRecords">
+        <view class="stat-icon-wrap blue">
+          <text class="stat-icon">📝</text>
+        </view>
+        <text class="stat-value">{{stats.records}}</text>
+        <text class="stat-name">起名记录</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item" bindtap="goToFavorites">
+        <view class="stat-icon-wrap orange">
+          <text class="stat-icon">⭐</text>
+        </view>
+        <text class="stat-value">{{stats.favorites}}</text>
+        <text class="stat-name">我的收藏</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item" bindtap="showQuotaDetail">
+        <view class="stat-icon-wrap green">
+          <text class="stat-icon">🎫</text>
+        </view>
+        <text class="stat-value">{{stats.remainingQuota}}</text>
+        <text class="stat-name">剩余次数</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 增值服务 -->
+  <view class="vip-section">
+    <view class="section-title">增值服务</view>
+    <view class="vip-list">
+      <view class="vip-item" bindtap="showVIPComing">
+        <view class="vip-icon-wrap vip-gold">
+          <text class="vip-icon">👑</text>
+        </view>
+        <view class="vip-info">
+          <text class="vip-name">VIP会员</text>
+          <text class="vip-desc">无限次起名 + 诗词解读</text>
+        </view>
+        <text class="vip-tag">即将上线</text>
+        <text class="arrow">›</text>
+      </view>
+      <view class="vip-item" bindtap="showExpertComing">
+        <view class="vip-icon-wrap vip-blue">
+          <text class="vip-icon">📞</text>
+        </view>
+        <view class="vip-info">
+          <text class="vip-name">专家咨询</text>
+          <text class="vip-desc">资深命名师一对一服务</text>
+        </view>
+        <text class="vip-tag">预约中</text>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="menu-section">
+    <view class="menu-item" bindtap="showHelp">
+      <view class="menu-icon-wrap">
+        <text class="menu-icon">❓</text>
+      </view>
+      <text class="menu-text">使用帮助</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="showAbout">
+      <view class="menu-icon-wrap">
+        <text class="menu-icon">ℹ️</text>
+      </view>
+      <text class="menu-text">关于我们</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="showFeedback">
+      <view class="menu-icon-wrap">
+        <text class="menu-icon">💬</text>
+      </view>
+      <text class="menu-text">意见反馈</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="showPrivacy">
+      <view class="menu-icon-wrap">
+        <text class="menu-icon">🔒</text>
+      </view>
+      <text class="menu-text">隐私政策</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 版本号 -->
+  <view class="version-section">
+    <text class="version-text">易名宝宝 v1.0.0</text>
+  </view>
+</view>

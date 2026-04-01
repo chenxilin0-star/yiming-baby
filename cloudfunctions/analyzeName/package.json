@@ -1,0 +1,11 @@
+{
+  "name": "analyzeName",
+  "version": "1.0.0",
+  "description": "分析已有名字",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest",
+    "lunar-javascript": "1.7.7",
+    "pinyin": "^2.11.0"
+  }
+}

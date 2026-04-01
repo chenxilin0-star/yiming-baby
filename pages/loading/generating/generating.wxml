@@ -1,0 +1,40 @@
+<!-- 生成中Loading页 -->
+<view class="container">
+  <!-- 太极动画 -->
+  <view class="taiji-container">
+    <view class="taiji">
+      <view class="taiji-yin"></view>
+      <view class="taiji-yang"></view>
+      <view class="taiji-dot black"></view>
+      <view class="taiji-dot white"></view>
+    </view>
+  </view>
+
+  <!-- 状态文字 -->
+  <view class="status-section">
+    <text class="status-title">{{currentStatus}}</text>
+    
+    <!-- 进度条 -->
+    <view class="progress-bar">
+      <view class="progress-track">
+        <view class="progress-fill" style="width: {{progress}}%;"></view>
+      </view>
+      <text class="progress-text">{{progress}}%</text>
+    </view>
+
+    <!-- 完成列表 -->
+    <view class="task-list">
+      <view class="task-item {{item.done ? 'done' : ''}} {{item.active ? 'active' : ''}}" wx:for="{{tasks}}" wx:key="text">
+        <text class="task-icon">{{item.done ? '✓' : (item.active ? '⏳' : '○')}}</text>
+        <text class="task-text">{{item.text}}</text>
+      </view>
+    </view>
+
+    <text class="time-hint" wx:if="{{progress < 100}}">预计还需 {{remainingTime}} 秒</text>
+  </view>
+
+  <!-- 取消按钮 -->
+  <view class="cancel-section" wx:if="{{progress < 100}}">
+    <text class="cancel-btn" bindtap="confirmCancel">取消</text>
+  </view>
+</view>

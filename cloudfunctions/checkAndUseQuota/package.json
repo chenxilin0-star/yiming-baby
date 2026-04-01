@@ -1,0 +1,9 @@
+{
+  "name": "checkAndUseQuota",
+  "version": "1.0.0",
+  "description": "检查并消耗用户次数",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

@@ -1,0 +1,6 @@
+<!-- 次数指示器组件 -->
+<view class="quota-indicator" bindtap="onTap">
+  <text class="quota-icon">🎫</text>
+  <text class="quota-main">今日剩余 {{remaining}} 次</text>
+  <text class="quota-sub">每日1次免费，分享可得更多</text>
+</view>

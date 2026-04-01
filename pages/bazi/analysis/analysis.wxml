@@ -1,0 +1,105 @@
+<!-- 五行分析页 -->
+<view class="container-safe">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <text class="nav-title">生辰解读</text>
+    <view class="nav-placeholder"></view>
+  </view>
+
+  <!-- 出生日期确认 -->
+  <view class="card info-card">
+    <text class="card-title">出生日期</text>
+    <view class="info-row">
+      <text class="info-label">公历：</text>
+      <text class="info-value">{{formData.solarDate}} {{formData.solarTime}}</text>
+    </view>
+    <view class="info-row">
+      <text class="info-label">农历：</text>
+      <text class="info-value">{{baziData.lunarDate}}</text>
+    </view>
+    <text class="modify-link" bindtap="modifyTime">[修改]</text>
+  </view>
+
+  <!-- 生辰信息 - 通过时间控制显示 -->
+  <view class="card bazi-card" wx:if="{{showDetailInfo}}">
+    <text class="card-title">生辰排盘</text>
+    <view class="bazi-table">
+      <view class="bazi-row header">
+        <view class="bazi-cell">年</view>
+        <view class="bazi-cell">月</view>
+        <view class="bazi-cell">日</view>
+        <view class="bazi-cell">时</view>
+      </view>
+      <view class="bazi-row">
+        <view class="bazi-cell">{{baziData.year.gan}}{{baziData.year.zhi}}</view>
+        <view class="bazi-cell">{{baziData.month.gan}}{{baziData.month.zhi}}</view>
+        <view class="bazi-cell highlight">{{baziData.day.gan}}{{baziData.day.zhi}}</view>
+        <view class="bazi-cell">{{baziData.hour.gan}}{{baziData.hour.zhi}}</view>
+      </view>
+      <view class="bazi-row wuxing">
+        <view class="bazi-cell">{{baziData.year.wuxing}}</view>
+        <view class="bazi-cell">{{baziData.month.wuxing}}</view>
+        <view class="bazi-cell highlight">{{baziData.day.wuxing}}</view>
+        <view class="bazi-cell">{{baziData.hour.wuxing}}</view>
+      </view>
+    </view>
+    <view class="day-master">
+      <text class="label">代表字：</text>
+      <text class="value">{{baziData.dayMaster}}</text>
+    </view>
+  </view>
+
+  <!-- 五行分布 - 通过时间控制显示 -->
+  <view class="card wuxing-card" wx:if="{{showDetailInfo}}">
+    <text class="card-title">能量分布</text>
+    <view class="wuxing-chart">
+      <view class="wuxing-item" wx:for="{{wuxingArray}}" wx:key="name">
+        <view class="wuxing-bar-wrap">
+          <view class="wuxing-bar" style="height: {{item.percent}}%; background: {{item.color}};"></view>
+        </view>
+        <text class="wuxing-name" style="color: {{item.color}};">{{item.name}}</text>
+        <text class="wuxing-count">{{item.count}}</text>
+      </view>
+    </view>
+    <text class="wuxing-summary">能量{{wuxingSummary}}，{{wuxingAnalysis}}</text>
+  </view>
+
+  <!-- 名字推荐设置 -->
+  <view class="card xiyongshen-card">
+    <text class="card-title">推荐设置</text>
+    <view class="xiyongshen-content">
+      <view class="xiyongshen-icon" style="background: {{xiyongshenColor}};">
+        <text class="icon-text">{{baziData.xiyongshen}}</text>
+      </view>
+      <view class="xiyongshen-info">
+        <text class="xiyongshen-title">天赋特质：{{baziData.xiyongshen}}能量</text>
+        <text class="xiyongshen-desc">建议名字中优先使用{{baziData.xiyongshen}}属性的字，寓意更加协调</text>
+      </view>
+    </view>
+    <text class="detail-link" bindtap="showDetailInterpretation">[查看详细说明 >]</text>
+  </view>
+
+  <!-- 底部操作区 -->
+  <view class="footer-section">
+    <view class="footer-card">
+      <view class="quota-hint">
+        <view class="quota-badge">
+          <text class="quota-icon">🎫</text>
+          <text class="quota-count">{{quotaText}}</text>
+        </view>
+        <text class="quota-desc">本次消耗1次机会</text>
+      </view>
+      <button
+        class="action-btn {{isGenerating ? 'loading' : ''}}"
+        bindtap="generateNames"
+        disabled="{{isGenerating}}"
+      >
+        <text class="btn-text">{{isGenerating ? '生成中...' : '生成名字'}}</text>
+        <text class="btn-arrow" wx:if="{{!isGenerating}}">→</text>
+      </button>
+    </view>
+  </view>
+</view>

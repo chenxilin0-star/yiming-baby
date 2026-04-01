@@ -1,0 +1,318 @@
+/* 取名宝宝结果列表页 */
+.container-safe {
+  padding: 0 32rpx 48rpx;
+}
+
+/* 导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  margin-bottom: 24rpx;
+}
+
+.nav-back {
+  width: 80rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  font-size: 40rpx;
+  color: var(--primary-900);
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: var(--primary-900);
+}
+
+.nav-share {
+  width: 100rpx;
+  text-align: right;
+}
+
+.share-icon {
+  font-size: 28rpx;
+  color: var(--accent-600);
+}
+
+/* 生辰信息 */
+.bazi-info {
+  padding: 24rpx;
+  background: var(--primary-50);
+  border-radius: var(--radius-md);
+  margin-bottom: 24rpx;
+}
+
+.bazi-text {
+  display: block;
+  font-size: 28rpx;
+  color: var(--primary-700);
+  margin-bottom: 8rpx;
+}
+
+.xiyong-text {
+  display: block;
+  font-size: 28rpx;
+  color: var(--accent-600);
+}
+
+/* 结果头部 */
+.result-header {
+  margin-bottom: 24rpx;
+}
+
+.result-title {
+  font-size: 28rpx;
+  color: var(--primary-500);
+}
+
+/* 名字列表 */
+.name-list {
+  margin-bottom: 32rpx;
+}
+
+.name-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  transition: all 0.2s;
+}
+
+.name-card.expanded {
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.08);
+}
+
+/* 卡片头部 */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.rank-badge {
+  width: 48rpx;
+  height: 48rpx;
+  background: var(--primary-50);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: var(--primary-500);
+  margin-right: 16rpx;
+}
+
+.name-main {
+  flex: 1;
+}
+
+.name-text {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: var(--primary-900);
+}
+
+.score-badge {
+  display: flex;
+  align-items: baseline;
+  padding: 8rpx 20rpx;
+  border-radius: var(--radius-full);
+}
+
+.score-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.score-unit {
+  font-size: 24rpx;
+  color: #fff;
+  margin-left: 4rpx;
+}
+
+/* 卡片信息 */
+.card-info {
+  display: flex;
+  gap: 32rpx;
+  margin-bottom: 16rpx;
+}
+
+.info-item {
+  font-size: 26rpx;
+  color: var(--primary-500);
+}
+
+/* 寓意 */
+.card-quote {
+  padding: 16rpx 0;
+  border-top: 2rpx solid var(--primary-50);
+  border-bottom: 2rpx solid var(--primary-50);
+  margin-bottom: 16rpx;
+}
+
+.quote-text {
+  font-size: 28rpx;
+  color: var(--primary-700);
+  font-style: italic;
+}
+
+/* 展开内容 */
+.card-expand {
+  padding-top: 16rpx;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expand-section {
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: var(--primary-900);
+  margin-bottom: 12rpx;
+}
+
+.char-detail {
+  padding: 16rpx;
+  background: var(--primary-50);
+  border-radius: var(--radius-md);
+  margin-bottom: 12rpx;
+}
+
+.char-name {
+  display: block;
+  font-size: 30rpx;
+  color: var(--primary-900);
+  font-weight: 500;
+  margin-bottom: 4rpx;
+}
+
+.char-info {
+  display: block;
+  font-size: 24rpx;
+  color: var(--primary-500);
+  margin-bottom: 4rpx;
+}
+
+.char-meaning {
+  display: block;
+  font-size: 26rpx;
+  color: var(--primary-700);
+}
+
+.poetic-text {
+  font-size: 28rpx;
+  color: var(--accent-600);
+  font-style: italic;
+}
+
+/* 操作按钮 */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16rpx;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 24rpx;
+  border-radius: var(--radius-full);
+  transition: all 0.2s;
+}
+
+.action-btn.active {
+  background: var(--accent-100);
+}
+
+.action-btn:active {
+  background: var(--primary-50);
+}
+
+.action-icon {
+  font-size: 32rpx;
+  color: var(--accent-600);
+  margin-right: 8rpx;
+}
+
+.action-btn.active .action-icon {
+  color: var(--accent-600);
+}
+
+.action-text {
+  font-size: 28rpx;
+  color: var(--primary-700);
+}
+
+/* 结束提示 */
+.end-hint {
+  text-align: center;
+  padding: 32rpx 0;
+}
+
+.end-text {
+  font-size: 26rpx;
+  color: var(--primary-500);
+}
+
+/* 分享区域 */
+.share-section {
+  margin-top: 24rpx;
+}
+
+.share-card {
+  background: linear-gradient(135deg, #F5EDE4, #fff);
+  border: 2rpx solid #E8F0EB;
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  text-align: center;
+}
+
+.share-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: var(--primary-900);
+  margin-bottom: 16rpx;
+}
+
+.share-desc {
+  display: block;
+  font-size: 28rpx;
+  color: var(--primary-500);
+  line-height: 1.8;
+  margin-bottom: 24rpx;
+}
+
+.share-actions {
+  display: flex;
+  gap: 24rpx;
+  justify-content: center;
+}
+
+.share-btn, .poster-btn {
+  flex: 1;
+  max-width: 280rpx;
+}

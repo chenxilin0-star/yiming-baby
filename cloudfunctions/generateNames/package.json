@@ -1,0 +1,11 @@
+{
+  "name": "generateNames",
+  "version": "1.0.0",
+  "description": "取名宝宝核心",
+  "main": "index.js",
+  "dependencies": {
+    "lunar-javascript": "1.7.7",
+    "pinyin": "^4.0.0",
+    "wx-server-sdk": "latest"
+  }
+}

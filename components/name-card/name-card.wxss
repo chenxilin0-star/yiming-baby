@@ -1,0 +1,63 @@
+/* 名字卡片组件 */
+.name-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.card-main {
+  display: flex;
+  align-items: center;
+}
+
+.rank {
+  width: 48rpx;
+  height: 48rpx;
+  background: var(--primary-50);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: var(--primary-500);
+  margin-right: 16rpx;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: var(--primary-900);
+  margin-bottom: 8rpx;
+}
+
+.meta {
+  font-size: 24rpx;
+  color: var(--primary-500);
+}
+
+.score {
+  padding: 8rpx 20rpx;
+  border-radius: var(--radius-full);
+}
+
+.score-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-quote {
+  margin-top: 16rpx;
+  padding-top: 16rpx;
+  border-top: 2rpx solid var(--primary-50);
+  font-size: 28rpx;
+  color: var(--primary-700);
+  font-style: italic;
+}

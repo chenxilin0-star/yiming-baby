@@ -1,0 +1,211 @@
+<!-- 步骤二：出生信息 -->
+<view class="page-container">
+  <!-- 顶部装饰 -->
+  <view class="header-decoration">
+    <view class="decoration-circle"></view>
+    <view class="decoration-line"></view>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-icon">‹</text>
+    </view>
+    <view class="nav-content">
+      <text class="nav-title">出生信息</text>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: 100%;"></view>
+      </view>
+    </view>
+    <text class="nav-step">2/2</text>
+  </view>
+
+  <!-- 欢迎语 -->
+  <view class="welcome-section">
+    <text class="welcome-title">出生信息</text>
+    <text class="welcome-subtitle">准确的出生时间，让系统为您推荐合适的名字</text>
+  </view>
+
+  <!-- 表单卡片 -->
+  <view class="form-card">
+    <!-- 出生日期 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">公历出生日期</text>
+        <text class="item-required">*</text>
+      </view>
+      <picker mode="date" value="{{form.solarDate}}" start="1900-01-01" end="{{today}}" bindchange="onDateChange">
+        <view class="picker-box {{form.solarDate ? 'has-value' : ''}}">
+          <view class="picker-content">
+            <text class="picker-value">{{form.solarDate || '请选择日期'}}</text>
+            <text class="picker-icon">📅</text>
+          </view>
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 出生时间 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">出生时间</text>
+        <text class="item-required">*</text>
+      </view>
+      <view class="time-section">
+        <picker mode="time" value="{{form.solarTime}}" bindchange="onTimeChange">
+          <view class="picker-box time-picker {{form.solarTime ? 'has-value' : ''}}">
+            <view class="picker-content">
+              <text class="picker-value">{{form.solarTime || '选择时间'}}</text>
+              <text class="picker-icon">🕐</text>
+            </view>
+            <text class="picker-arrow">›</text>
+          </view>
+        </picker>
+        <view class="time-result" wx:if="{{shiChenName}}">
+          <text class="shichen-badge">{{shiChenName}}</text>
+        </view>
+      </view>
+      <view class="help-row">
+        <text class="help-text" bindtap="showShiChenPicker">不知道具体时间？</text>
+      </view>
+    </view>
+
+    <!-- 出生地 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">出生地点</text>
+        <text class="item-optional">（选填）</text>
+      </view>
+      <picker mode="region" bindchange="onRegionChange" value="{{region}}">
+        <view class="picker-box {{form.birthPlace ? 'has-value' : ''}}">
+          <view class="picker-content">
+            <text class="picker-value">{{form.birthPlace || '请选择出生地'}}</text>
+            <text class="picker-icon">📍</text>
+          </view>
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+      <text class="input-tip">用于更精准的推荐</text>
+    </view>
+
+    <!-- 分隔线 -->
+    <view class="divider">
+      <text class="divider-text">选填信息</text>
+    </view>
+
+    <!-- 期望特点 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">期望特点</text>
+        <text class="item-optional">（多选）</text>
+      </view>
+      <view class="tag-grid">
+        <view 
+          class="tag-item {{item.selected ? 'active' : ''}}" 
+          wx:for="{{wishTags}}" 
+          wx:key="value"
+          bindtap="toggleTag"
+          data-index="{{index}}"
+        >
+          <text class="tag-icon">{{item.icon}}</text>
+          <text class="tag-name">{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 不想用的字 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">不想用的字</text>
+        <text class="item-optional">（选填）</text>
+      </view>
+      <view class="input-box {{focusAvoid ? 'focus' : ''}}">
+        <input
+          class="avoid-input"
+          type="text"
+          placeholder="输入不想用的字，多个用空格分隔"
+          placeholder-class="placeholder"
+          value="{{avoidInput}}"
+          bindinput="onAvoidInput"
+          bindfocus="onAvoidFocus"
+          bindblur="onAvoidBlur"
+          bindconfirm="addAvoidChar"
+        />
+        <text class="add-char-btn" bindtap="addAvoidCharFromBtn">+</text>
+      </view>
+      <view class="avoid-tags" wx:if="{{form.avoidChars.length > 0}}">
+        <view class="avoid-tag" wx:for="{{form.avoidChars}}" wx:key="*this">
+          <text class="tag-char">{{item}}</text>
+          <text class="tag-remove" bindtap="removeAvoidChar" data-char="{{item}}">×</text>
+        </view>
+      </view>
+      <text class="input-tip">输入后点击右侧 + 号添加</text>
+    </view>
+
+    <!-- 固定用字 -->
+    <view class="form-item">
+      <view class="item-header">
+        <text class="item-label">固定用字</text>
+        <text class="item-optional">（选填）</text>
+      </view>
+      <view class="input-box {{focusPreferred ? 'focus' : ''}}">
+        <input
+          class="avoid-input"
+          type="text"
+          placeholder="输入想要的字，如家传字"
+          placeholder-class="placeholder"
+          value="{{preferredInput}}"
+          bindinput="onPreferredInput"
+          bindfocus="onPreferredFocus"
+          bindblur="onPreferredBlur"
+          bindconfirm="addPreferredChar"
+        />
+        <text class="add-char-btn" bindtap="addPreferredCharFromBtn">+</text>
+      </view>
+      <view class="avoid-tags preferred-tags" wx:if="{{form.preferredChars.length > 0}}">
+        <view class="avoid-tag preferred-tag" wx:for="{{form.preferredChars}}" wx:key="*this">
+          <text class="tag-char">{{item}}</text>
+          <text class="tag-remove" bindtap="removePreferredChar" data-char="{{item}}">×</text>
+        </view>
+      </view>
+      <text class="input-tip">输入后点击右侧 + 号添加，系统会优先使用这些字</text>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="footer-area">
+    <view class="cost-badge">
+      <text class="cost-icon">🎫</text>
+      <text class="cost-text">本次消耗1次机会，{{quotaText}}</text>
+    </view>
+    <button class="submit-btn {{isFormValid ? 'active' : 'disabled'}}" bindtap="viewBazi">
+      <text class="btn-text">开始生成名字</text>
+      <text class="btn-arrow">→</text>
+    </button>
+  </view>
+
+  <!-- 时间选择弹窗 -->
+  <view class="modal-mask" wx:if="{{showShiChenModal}}" bindtap="closeShiChenModal"></view>
+  <view class="modal-content" wx:if="{{showShiChenModal}}">
+    <view class="modal-header">
+      <text class="modal-title">选择大致时间段</text>
+      <text class="modal-close" bindtap="closeShiChenModal">×</text>
+    </view>
+    <view class="shichen-grid">
+      <view
+        class="shichen-item"
+        wx:for="{{shiChenList}}"
+        wx:key="index"
+        bindtap="selectShiChen"
+        data-index="{{index}}"
+      >
+        <text class="shichen-name">{{item.name}}</text>
+        <text class="shichen-range">{{item.range}}</text>
+      </view>
+      <view class="shichen-item unsure" bindtap="selectUnsureShiChen">
+        <text class="shichen-name">不确定</text>
+        <text class="shichen-range">默认中午</text>
+      </view>
+    </view>
+  </view>
+</view>
