@@ -11,10 +11,10 @@
     </view>
   </view>
 
-  <!-- 生辰信息 -->
+  <!-- 宝宝信息 -->
   <view class="bazi-info">
-    <text class="bazi-text">生辰：{{bazi.year.gan}}{{bazi.year.zhi}} {{bazi.month.gan}}{{bazi.month.zhi}} {{bazi.day.gan}}{{bazi.day.zhi}} {{bazi.hour.gan}}{{bazi.hour.zhi}}</text>
-    <text class="xiyong-text">天赋：{{bazi.xiyongshen}}能量</text>
+    <text class="bazi-text">{{bazi.solarDate}} {{bazi.solarTime}} 出生</text>
+    <text class="xiyong-text">推荐用字：{{bazi.xiyongshen}}属性</text>
   </view>
 
   <!-- 结果标题 -->

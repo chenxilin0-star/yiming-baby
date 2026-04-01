@@ -216,7 +216,7 @@ Page({
     quotaManager.recordShare(scene)
 
     return {
-      title: '快来看看我的生辰解读',
+      title: '快来看看我宝宝的名字候选',
       path: `/pages/index/index?scene=${scene}`,
       imageUrl: ''
     }
@@ -228,7 +228,7 @@ Page({
     quotaManager.recordShare(scene, 'timeline')
 
     return {
-      title: '快来看看我的生辰解读',
+      title: '快来看看我宝宝的名字候选',
       query: `scene=${scene}`
     }
   }

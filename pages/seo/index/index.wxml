@@ -9,7 +9,7 @@
   <!-- 服务介绍 -->
   <view class="intro-section">
     <text class="section-title">专业智能起名服务</text>
-    <text class="intro-text">易名宝宝是一款基于传统诗词文化的智能起名工具，结合生辰解读、音律美学、字义寓意，为您的宝宝提供专业、吉祥、好听的名字推荐。我们致力于为每一个新生命送上一份美好的名字礼物。</text>
+    <text class="intro-text">易名宝宝是一款基于传统诗词文化的智能起名工具，结合诗词文化分析、音律美学、字义寓意，为您的宝宝提供专业、吉祥、好听的名字推荐。我们致力于为每一个新生命送上一份美好的名字礼物。</text>
   </view>
 
   <!-- 核心功能 -->
@@ -21,7 +21,7 @@
         <text class="feature-desc">AI智能分析，结合诗词典籍，为宝宝推荐最适合的名字组合</text>
       </view>
       <view class="feature-item">
-        <text class="feature-title">生辰解读</text>
+        <text class="feature-title">名字分析</text>
         <text class="feature-desc">根据宝宝出生时间，精准分析能量属性，推荐能量均衡的好名字</text>
       </view>
       <view class="feature-item">

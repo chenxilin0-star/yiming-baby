@@ -4,7 +4,7 @@ const { showModal } = require('../../../utils/util.js')
 Page({
   data: {
     progress: 0,
-    currentStatus: '正在解读生辰信息...',
+    currentStatus: '正在分析宝宝信息...',
     remainingTime: 5,
     tasks: [
       { text: '解读天赋特质', done: false, active: true },
@@ -90,7 +90,7 @@ Page({
 
     // 更新状态文字
     let status = this.data.currentStatus
-    if (progress < 20) status = '正在解读生辰信息...'
+    if (progress < 20) status = '正在分析宝宝信息...'
     else if (progress < 45) status = '正在匹配经典出处...'
     else if (progress < 70) status = '正在筛选吉祥汉字...'
     else status = '正在优化音律搭配...'

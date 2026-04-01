@@ -27,10 +27,10 @@
     </view>
   </view>
 
-  <!-- 生辰信息 -->
+  <!-- 宝宝信息 -->
   <view class="section-card">
     <view class="section-header">
-      <text class="section-title">生辰信息</text>
+      <text class="section-title">宝宝信息</text>
     </view>
     <view class="bazi-grid">
       <view class="bazi-item">
