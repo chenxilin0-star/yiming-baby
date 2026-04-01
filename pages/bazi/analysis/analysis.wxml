@@ -1,11 +1,11 @@
-<!-- 生辰解读页 -->
+<!-- 名字分析页 -->
 <view class="container-safe">
   <!-- 导航栏 -->
   <view class="nav-bar">
     <view class="nav-back" bindtap="goBack">
       <text class="nav-icon">←</text>
     </view>
-    <text class="nav-title">生辰解读</text>
+    <text class="nav-title">名字分析</text>
     <view class="nav-placeholder"></view>
   </view>
 
@@ -23,38 +23,9 @@
     <text class="modify-link" bindtap="modifyTime">[修改]</text>
   </view>
 
-  <!-- 生辰信息 - 通过时间控制显示 -->
-  <view class="card bazi-card" wx:if="{{showDetailInfo}}">
-    <text class="card-title">生辰解读</text>
-    <view class="bazi-table">
-      <view class="bazi-row header">
-        <view class="bazi-cell">年</view>
-        <view class="bazi-cell">月</view>
-        <view class="bazi-cell">日</view>
-        <view class="bazi-cell">时</view>
-      </view>
-      <view class="bazi-row">
-        <view class="bazi-cell">{{baziData.year.gan}}{{baziData.year.zhi}}</view>
-        <view class="bazi-cell">{{baziData.month.gan}}{{baziData.month.zhi}}</view>
-        <view class="bazi-cell highlight">{{baziData.day.gan}}{{baziData.day.zhi}}</view>
-        <view class="bazi-cell">{{baziData.hour.gan}}{{baziData.hour.zhi}}</view>
-      </view>
-      <view class="bazi-row wuxing">
-        <view class="bazi-cell">{{baziData.year.wuxing}}</view>
-        <view class="bazi-cell">{{baziData.month.wuxing}}</view>
-        <view class="bazi-cell highlight">{{baziData.day.wuxing}}</view>
-        <view class="bazi-cell">{{baziData.hour.wuxing}}</view>
-      </view>
-    </view>
-    <view class="day-master">
-      <text class="label">代表字：</text>
-      <text class="value">{{baziData.dayMaster}}</text>
-    </view>
-  </view>
-
-  <!-- 能量分布 - 通过时间控制显示 -->
+  <!-- 五行分析 - 通过时间控制显示 -->
   <view class="card wuxing-card" wx:if="{{showDetailInfo}}">
-    <text class="card-title">能量分布</text>
+    <text class="card-title">五行分布</text>
     <view class="wuxing-chart">
       <view class="wuxing-item" wx:for="{{wuxingArray}}" wx:key="name">
         <view class="wuxing-bar-wrap">
@@ -64,10 +35,10 @@
         <text class="wuxing-count">{{item.count}}</text>
       </view>
     </view>
-    <text class="wuxing-summary">能量{{wuxingSummary}}，{{wuxingAnalysis}}</text>
+    <text class="wuxing-summary">{{wuxingSummary}}，{{wuxingAnalysis}}</text>
   </view>
 
-  <!-- 名字推荐设置 -->
+  <!-- 推荐设置 -->
   <view class="card xiyongshen-card">
     <text class="card-title">推荐设置</text>
     <view class="xiyongshen-content">
@@ -75,7 +46,7 @@
         <text class="icon-text">{{baziData.xiyongshen}}</text>
       </view>
       <view class="xiyongshen-info">
-        <text class="xiyongshen-title">天赋特质：{{baziData.xiyongshen}}能量</text>
+        <text class="xiyongshen-title">推荐用字：{{baziData.xiyongshen}}属性</text>
         <text class="xiyongshen-desc">建议名字中优先使用{{baziData.xiyongshen}}属性的字，寓意更加协调</text>
       </view>
     </view>

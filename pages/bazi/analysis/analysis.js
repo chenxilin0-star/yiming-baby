@@ -1,4 +1,4 @@
-// 生辰解读页
+// 名字分析页
 const quotaManager = require('../../../utils/quota.js')
 const { showError, showLoading, hideLoading } = require('../../../utils/util.js')
 
@@ -29,7 +29,7 @@ Page({
     xiyongshenColor: '#4a90d9',
     quotaText: '剩余1次',
     isGenerating: false,
-    showDetailInfo: false  // 控制生辰信息和能量分布的显示
+    showDetailInfo: true  // 控制生辰信息和能量分布的显示
   },
 
   async onLoad() {
@@ -114,12 +114,12 @@ Page({
       if (result.success) {
         this.processBaziData(result.bazi)
       } else {
-        showError(result.message || '生辰解读失败')
+        showError(result.message || '分析失败')
       }
     } catch (err) {
       hideLoading()
-      console.error('生辰解读失败:', err)
-      showError('生辰解读失败')
+      console.error('分析失败:', err)
+      showError('分析失败')
     }
   },
 
@@ -147,16 +147,16 @@ Page({
 
     let summary = ''
     if (missing.length > 0) {
-      summary = `缺${missing.join('缺')}`
+      summary = `五行缺${missing.join('、')}`
     } else {
-      summary = '能量齐全'
+      summary = '五行齐全'
     }
 
     let analysis = ''
     if (strong.length > 0) {
-      analysis = `${strong.join('、')}能量偏旺`
+      analysis = `${strong.join('、')}五行偏旺`
     } else {
-      analysis = '能量均衡'
+      analysis = '五行协调'
     }
 
     this.setData({
@@ -176,8 +176,8 @@ Page({
   // 查看详细说明
   showDetailInterpretation() {
     wx.showModal({
-      title: '天赋特质说明',
-      content: `根据生辰解读，您的代表字为${this.data.baziData.dayMaster}，${this.data.wuxingSummary}。推荐使用"${this.data.baziData.xiyongshen}"属性的字，名字中宜使用${this.data.baziData.xiyongshen}能量的汉字，以达到能量均衡。`,
+      title: '推荐用字说明',
+      content: `根据名字分析，${this.data.wuxingSummary}。推荐使用"${this.data.baziData.xiyongshen}"属性的字，名字中宜使用${this.data.baziData.xiyongshen}属性的汉字，寓意更加协调。`,
       showCancel: false
     })
   },
