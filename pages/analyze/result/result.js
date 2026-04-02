@@ -67,10 +67,22 @@ Page({
     }
   },
 
+  // 返回上一页
+  goBack() {
+    wx.navigateBack({
+      fail: () => {
+        // 如果无法返回，跳转到首页
+        wx.switchTab({
+          url: '/pages/index/index'
+        })
+      }
+    })
+  },
+
   // 返回首页
   goHome() {
     wx.switchTab({
       url: '/pages/index/index'
     })
-  }
+  },
 })
