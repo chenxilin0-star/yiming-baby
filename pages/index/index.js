@@ -100,36 +100,5 @@ Page({
       title: '易名宝宝 - 智能起名，传承国学文化',
       query: `scene=${scene}`
     }
-  },
-
-  // 添加测试次数（调试用）
-  async addTestQuota() {
-    try {
-      wx.showLoading({ title: '添加中...' })
-      const { result } = await wx.cloud.callFunction({
-        name: 'addTestQuota'
-      })
-      wx.hideLoading()
-      if (result.success) {
-        wx.showToast({
-          title: '已添加 +1 次',
-          icon: 'success'
-        })
-        // 刷新配额显示
-        this.loadQuota(true)
-      } else {
-        wx.showToast({
-          title: result.message || '添加失败',
-          icon: 'none'
-        })
-      }
-    } catch (err) {
-      wx.hideLoading()
-      console.error('添加测试次数失败:', err)
-      wx.showToast({
-        title: '添加失败',
-        icon: 'none'
-      })
-    }
   }
 })

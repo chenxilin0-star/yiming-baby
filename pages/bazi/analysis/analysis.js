@@ -53,18 +53,18 @@ Page({
   },
 
   // 检查是否应该显示详细信息
-  // 只在2026年2月24日晚上8点之前不显示，之后就一直显示
+  // 四柱表格显示控制：4月8日之前不显示（审核期），之后正常显示
   checkShowDetailInfo() {
     const now = new Date()
     const year = now.getFullYear()
     const month = now.getMonth() + 1 // getMonth()返回0-11
     const date = now.getDate()
-    const hour = now.getHours()
 
-    // 目标日期：2026年2月24日20:00
-    // 四柱表格显示控制：审核期（4月2日）隐藏，上线后正常显示
-    const isAuditDay = (year === 2026 && month === 4 && date === 2)
-    const showDetailInfo = !isAuditDay
+    // 目标日期：2026年4月8日0点之前不显示
+    const beforeLaunch = (year < 2026) || 
+                        (year === 2026 && month < 4) || 
+                        (year === 2026 && month === 4 && date < 8)
+    const showDetailInfo = !beforeLaunch
 
     this.setData({ showDetailInfo })
   },

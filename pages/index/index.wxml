@@ -41,11 +41,6 @@
     </view>
   </view>
 
-  <!-- 调试按钮：添加测试次数 -->
-  <view class="debug-section">
-    <button class="debug-btn" bindtap="addTestQuota">+1测试次数</button>
-  </view>
-
   <!-- 服务特色 -->
   <view class="features-section">
     <view class="section-header">
