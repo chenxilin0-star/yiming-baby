@@ -94,43 +94,71 @@ page, view, text, image, input, textarea, button, scroll-view, swiper, swiper-it
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 96rpx;
-  border-radius: var(--radius-full);
-  font-size: 32rpx;
+  height: 88rpx;
+  padding: 0 48rpx;
+  border-radius: 44rpx;
+  font-size: 30rpx;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  outline: none;
 }
 
 .btn-primary {
-  background: var(--accent-600);
+  background: linear-gradient(135deg, #D4838F 0%, #E8A0AA 100%);
   color: #fff;
+  box-shadow: 0 8rpx 24rpx rgba(212, 131, 143, 0.35);
 }
 
 .btn-primary:active {
   opacity: 0.9;
-  transform: scale(0.98);
+  transform: scale(0.97);
+  box-shadow: 0 4rpx 12rpx rgba(212, 131, 143, 0.25);
 }
 
 .btn-primary:disabled {
-  background: #ccc;
+  background: #d0d0d0;
   color: #fff;
+  box-shadow: none;
 }
 
 .btn-secondary {
-  background: transparent;
-  border: 2rpx solid var(--accent-600);
-  color: var(--accent-600);
+  background: #fff;
+  border: 2rpx solid var(--primary-200);
+  color: var(--primary-700);
 }
 
 .btn-secondary:active {
-  background: var(--accent-100);
+  background: var(--primary-50);
+  border-color: var(--primary-500);
 }
 
 .btn-text {
   background: transparent;
   color: var(--accent-600);
   height: auto;
-  padding: var(--space-sm) 0;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.btn-text:active {
+  background: var(--accent-100);
+}
+
+/* 圆角胶囊按钮 */
+.btn-capsule {
+  height: 64rpx;
+  padding: 0 32rpx;
+  border-radius: 32rpx;
+  font-size: 26rpx;
+  background: linear-gradient(135deg, #D4838F 0%, #E8A0AA 100%);
+  color: #fff;
+  box-shadow: 0 4rpx 16rpx rgba(212, 131, 143, 0.3);
+}
+
+.btn-capsule:active {
+  transform: scale(0.97);
+  box-shadow: 0 2rpx 8rpx rgba(212, 131, 143, 0.2);
 }
 
 /* 输入框样式 */

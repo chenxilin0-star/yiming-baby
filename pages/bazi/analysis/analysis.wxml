@@ -20,7 +20,7 @@
       <text class="info-label">农历：</text>
       <text class="info-value">{{baziData.lunarDate}}</text>
     </view>
-    <text class="modify-link" bindtap="modifyTime">[修改]</text>
+    <text class="modify-link" bindtap="modifyTime">修改 ></text>
   </view>
 
   <!-- 四柱表格 - 仅审核期隐藏，上线后正常显示 -->
