@@ -770,11 +770,25 @@ const SURNAME_STROKES = {
 }
 
 function getCharWuxing(char) {
+  // 1. 先查字库
   if (JIN_ZI[char]) return '金'
   if (MU_ZI[char]) return '木'
   if (SHUI_ZI[char]) return '水'
   if (HUO_ZI[char]) return '火'
   if (TU_ZI[char]) return '土'
+
+  // 2. 字库没有，根据偏旁推断五行
+  // 氵/冫 → 水
+  if (char.includes('氵') || char.includes('冫')) return '水'
+  // 火/灬 → 火
+  if (char.includes('火') || char.includes('灬')) return '火'
+  // 木/艹 → 木
+  if (char.includes('木') || char.includes('艹')) return '木'
+  // 金/钅 → 金
+  if (char.includes('金') || char.includes('钅')) return '金'
+  // 土/瓦 → 土
+  if (char.includes('土') || char.includes('瓦')) return '土'
+
   return null
 }
 
