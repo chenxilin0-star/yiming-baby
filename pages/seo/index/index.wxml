@@ -1,15 +1,38 @@
-<!-- SEO静态页面 - 智能起名_免费起名_宝宝起名_新生儿起名大全 -->
+<!-- SEO静态页面 - 智能起名_免费起名_宝宝起名_新生儿起名大全_2026蛇宝宝起名 -->
 <view class="seo-page">
   <!-- 顶部标题区 -->
   <view class="header-section">
     <text class="main-title">易名宝宝 - 智能起名助手</text>
-    <text class="sub-title">免费宝宝起名 | 新生儿起名大全 | 2024起名 | 2025起名</text>
+    <text class="sub-title">免费宝宝起名 | 新生儿取名 | 2026蛇宝宝起名 | 2025起名 | 诗经楚辞起名</text>
   </view>
 
   <!-- 服务介绍 -->
   <view class="intro-section">
     <text class="section-title">专业智能起名服务</text>
-    <text class="intro-text">易名宝宝是一款基于传统诗词文化的智能起名工具，结合诗词文化分析、音律美学、字义寓意，为您的宝宝提供专业、吉祥、好听的名字推荐。我们致力于为每一个新生命送上一份美好的名字礼物。</text>
+    <text class="intro-text">易名宝宝是一款基于传统诗词文化的智能起名工具，结合诗经楚辞、唐诗宋词、音律美学、字义寓意，为您的宝宝提供专业、吉祥、好听的名字推荐。我们致力于为每一个新生命送上一份美好的名字礼物。无论您是在为2026蛇宝宝、2025宝宝还是新生儿寻找一个好名字，易名宝宝都能为您提供专业的起名建议。</text>
+  </view>
+
+  <!-- 快速入口 -->
+  <view class="cta-section">
+    <text class="section-title">立即免费起名</text>
+    <view class="cta-cards">
+      <view class="cta-card" bindtap="goToNaming">
+        <text class="cta-icon">✨</text>
+        <view class="cta-text-wrap">
+          <text class="cta-title">智能宝宝起名</text>
+          <text class="cta-desc">AI结合诗词典籍，免费生成好名字</text>
+        </view>
+        <text class="cta-arrow">→</text>
+      </view>
+      <view class="cta-card" bindtap="goToAnalyze">
+        <text class="cta-icon">📝</text>
+        <view class="cta-text-wrap">
+          <text class="cta-title">名字打分测评</text>
+          <text class="cta-desc">已有名字？测测好不好听吉祥</text>
+        </view>
+        <text class="cta-arrow">→</text>
+      </view>
+    </view>
   </view>
 
   <!-- 核心功能 -->
@@ -18,28 +41,94 @@
     <view class="feature-list">
       <view class="feature-item">
         <text class="feature-title">智能起名</text>
-        <text class="feature-desc">AI智能分析，结合诗词典籍，为宝宝推荐最适合的名字组合</text>
+        <text class="feature-desc">AI智能分析，结合诗经楚辞、唐诗宋词，为宝宝推荐最适合的名字组合</text>
       </view>
       <view class="feature-item">
-        <text class="feature-title">名字分析</text>
-        <text class="feature-desc">根据宝宝出生时间，精准分析能量属性，推荐能量均衡的好名字</text>
+        <text class="feature-title">名字打分</text>
+        <text class="feature-desc">输入已有名字，AI分析名字的寓意、音律、字形，给出专业评分</text>
       </view>
       <view class="feature-item">
         <text class="feature-title">音律美学</text>
-        <text class="feature-desc">注重名字的音韵搭配，朗朗上口，悦耳动听</text>
+        <text class="feature-desc">注重名字的音韵搭配，朗朗上口，悦耳动听，避免不良谐音</text>
       </view>
       <view class="feature-item">
         <text class="feature-title">字义寓意</text>
-        <text class="feature-desc">精选寓意美好的汉字，每个名字都有深刻的文化内涵</text>
+        <text class="feature-desc">精选寓意美好的汉字，每个名字都有深刻的文化内涵和美好寓意</text>
       </view>
       <view class="feature-item">
         <text class="feature-title">免费使用</text>
-        <text class="feature-desc">每日免费起名机会，让每个家庭都能享受专业的起名服务</text>
+        <text class="feature-desc">每日免费起名机会，分享好友获得更多机会，让每个家庭都能用上</text>
       </view>
       <view class="feature-item">
         <text class="feature-title">诗经楚辞</text>
-        <text class="feature-desc">从经典诗词中汲取灵感，为宝宝取一个富有诗意的名字</text>
+        <text class="feature-desc">从《诗经》《楚辞》《论语》《唐诗》《宋词》中汲取灵感，取诗意美名</text>
       </view>
+      <view class="feature-item">
+        <text class="feature-title">男孩名字</text>
+        <text class="feature-desc">精选阳刚大气、儒雅有内涵的男孩名字，彰显男子气概</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-title">女孩名字</text>
+        <text class="feature-desc">精选温婉柔美、灵动有诗意的女孩名字，展现女性魅力</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 2026蛇宝宝起名专区 -->
+  <view class="year-section">
+    <text class="section-title">2026蛇宝宝起名专区</text>
+    <view class="year-content">
+      <text class="guide-title">2026丙午马年宝宝起名指南</text>
+      <text class="guide-text">2026年是丙午马年，马宝宝起名宜用带艹、木、禾、豆等部首的字，寓意粮食丰盛、安居乐业。宜用带衣、彡、巾等部首的字，寓意披彩衣、事业有成。</text>
+      <text class="guide-text">宜用字推荐：萱、蓉、芷、荣、林、杉、禾、穗、秀、颖、裕、祥、彰、彬、彩、帆、帷、幕、丝、绮</text>
+      
+      <text class="guide-title">2026马年男孩名字推荐</text>
+      <text class="guide-text">骏驰、彬蔚、荣轩、林逸、杉泽、禾安、裕祥、彰华、彩铭、帆远、彦博、泽彬、骏逸、彦辰、荣辉、秀实、颖达、绮年、彬然、杉韵</text>
+      
+      <text class="guide-title">2026马年女孩名字推荐</text>
+      <text class="guide-text">萱宁、蓉悦、芷萱、荣雅、林溪、杉月、禾安、秀颖、裕柔、彩萱、帆语、绮梦、彦妍、丝语、芷兰、蓉华、林馨、杉雅、彬然、秀兰</text>
+    </view>
+  </view>
+
+  <!-- 2025蛇宝宝起名 -->
+  <view class="year-section">
+    <text class="section-title">2025蛇宝宝起名推荐</text>
+    <view class="year-content">
+      <text class="guide-title">2025乙巳蛇年宝宝起名指南</text>
+      <text class="guide-text">2025年是乙巳蛇年，蛇宝宝起名宜用带艹、木、田、口等部首的字，如：萱、林、思、和等。蛇喜欢在田野、草丛中栖息，带有这些部首的字寓意安居乐业、衣食无忧。</text>
+      
+      <text class="guide-title">2025蛇年男孩名字推荐</text>
+      <text class="guide-text">思远、林轩、若谷、茂行、萱然、和风、宇轩、泽萱、智宸、铭泽、子安、瑞霖、思源、文彬、星辰、皓轩、嘉和、宇泽、若辰、森然</text>
+      
+      <text class="guide-title">2025蛇年女孩名字推荐</text>
+      <text class="guide-text">萱宁、芷若、梦萱、诗涵、思语、若曦、林婉、雅萱、和美、芳华、晴萱、思颖、若兰、梦瑶、雅婷、萱怡、林溪、美萱、若兮、和雅</text>
+    </view>
+  </view>
+
+  <!-- 诗经楚辞起名 -->
+  <view class="classic-section">
+    <text class="section-title">诗经楚辞起名精选</text>
+    <view class="classic-content">
+      <text class="guide-title">出自《诗经》的美名</text>
+      <text class="guide-text">静姝 — "静女其姝，俟我于城隅"（《邶风·静女》）</text>
+      <text class="guide-text">子衿 — "青青子衿，悠悠我心"（《郑风·子衿》）</text>
+      <text class="guide-text">蓁蓁 — "桃之夭夭，其叶蓁蓁"（《周南·桃夭》）</text>
+      <text class="guide-text">燕婉 — "燕婉之求，得此戚施"（《邶风·新台》）</text>
+      <text class="guide-text">如华 — "裳锦褧裳，衣锦褧衣" 之美如华（《郑风·丰》）</text>
+      
+      <text class="guide-title">出自《楚辞》的美名</text>
+      <text class="guide-text">修能 — "又重之以修能"（《离骚》）</text>
+      <text class="guide-text">正则 — "名余曰正则兮"（《离骚》）</text>
+      <text class="guide-text">灵均 — "字余曰灵均"（《离骚》）</text>
+      <text class="guide-text">望舒 — "前望舒使先驱兮"（《离骚》）</text>
+      <text class="guide-text">飞龙 — "飞龙秋游兮"（《九歌》）</text>
+      
+      <text class="guide-title">出自《唐诗宋词》的美名</text>
+      <text class="guide-text">清照 — 取自李清照，清雅明亮</text>
+      <text class="guide-text">浩然 — 取自孟浩然，浩然正气</text>
+      <text class="guide-text">致远 — "非宁静无以致远"（诸葛亮）</text>
+      <text class="guide-text">明轩 — 明亮高远，气宇轩昂</text>
+      <text class="guide-text">梦蝶 — "庄生晓梦迷蝴蝶"（李商隐）</text>
     </view>
   </view>
 
@@ -53,32 +142,38 @@
       <text class="guide-text">3. 关注名字的寓意，选择积极向上、寓意美好的字</text>
       <text class="guide-text">4. 结合宝宝的出生时间，选择诗词典故的汉字</text>
       <text class="guide-text">5. 避免与长辈名字相同或相近，尊重家族传统</text>
+      <text class="guide-text">6. 注意名字的笔画不要过于复杂，方便书写</text>
+      <text class="guide-text">7. 考虑名字搭配姓氏的整体效果</text>
 
-      <text class="guide-title">二、2024年龙宝宝起名推荐</text>
-      <text class="guide-text">2024年是甲辰龙年，龙宝宝起名宜用带水、木、玉、日、月等部首的字，如：泽、沐、琳、晨、明等。</text>
+      <text class="guide-title">二、宝宝起名的五大方法</text>
+      <text class="guide-text">1. 诗词起名法：从诗经楚辞、唐诗宋词中选取美好字词</text>
+      <text class="guide-text">2. 寓意起名法：选择有美好寓意的字，表达对孩子的期望</text>
+      <text class="guide-text">3. 音律起名法：注重声调搭配，平仄结合，朗朗上口</text>
+      <text class="guide-text">4. 字形起名法：注意字形结构匀称，视觉美感好</text>
+      <text class="guide-text">5. 生肖起名法：结合宝宝生肖属相，选用吉祥部首的字</text>
 
-      <text class="guide-title">三、2025年蛇宝宝起名推荐</text>
-      <text class="guide-text">2025年是乙巳蛇年，蛇宝宝起名宜用带艹、木、田、口等部首的字，如：萱、林、思、和等。</text>
+      <text class="guide-title">三、男孩起名常用字</text>
+      <text class="guide-text">浩、宇、轩、泽、铭、晨、睿、霖、辰、谦、逸、然、阳、恒、晖、朗、瀚、博、文、俊、彦、鼎、哲、瑞、嘉、彦、润、骏、彬、彦</text>
 
-      <text class="guide-title">四、男孩起名常用字</text>
-      <text class="guide-text">浩、宇、轩、泽、铭、晨、睿、霖、辰、谦、逸、铭、然、阳、恒、宇、辰、晖、朗、瀚</text>
+      <text class="guide-title">四、女孩起名常用字</text>
+      <text class="guide-text">悦、欣、怡、萱、琳、瑶、晴、雪、芷、梦、诗、韵、涵、雅、宁、然、芯、语、薇、婉、馨、颖、柔、萱、彤、妍、娜、慧、琳、灵</text>
 
-      <text class="guide-title">五、女孩起名常用字</text>
-      <text class="guide-text">悦、欣、怡、萱、琳、瑶、晴、雪、芷、梦、诗、韵、涵、雅、宁、然、芯、语、萱、薇</text>
+      <text class="guide-title">五、双胞胎宝宝起名技巧</text>
+      <text class="guide-text">双胞胎起名可以采用对仗法，使用相同部首或成对的词语。也可以使用相近的寓意，如"文博、文雅"、"明辉、明耀"、"思远、思齐"等。</text>
     </view>
   </view>
 
   <!-- 热门名字推荐 -->
   <view class="hot-names-section">
-    <text class="section-title">2024热门宝宝名字推荐</text>
+    <text class="section-title">2025-2026热门宝宝名字推荐</text>
     <view class="names-grid">
       <view class="name-category">
         <text class="category-title">男孩名字</text>
-        <text class="names-list">浩宇、嘉泰、泽铭、晨煊、子茗、源书、彬予、星悦、宏恺、文琪、君卓、翊菲、忻泽、奕昕、启辰</text>
+        <text class="names-list">浩宇、嘉泰、泽铭、晨煊、子茗、源书、彬予、星悦、宏恺、文琪、君卓、翊菲、忻泽、奕昕、启辰、骏驰、彦博、荣轩、林逸、杉泽</text>
       </view>
       <view class="name-category">
         <text class="category-title">女孩名字</text>
-        <text class="names-list">妍梓、雅娜、美丫、一禾、又芊、芷萱、梦瑶、诗涵、雅琳、欣怡、雨晴、思语、若曦、梓萱、沐瑶</text>
+        <text class="names-list">妍梓、雅娜、一禾、又芊、芷萱、梦瑶、诗涵、雅琳、欣怡、雨晴、思语、若曦、梓萱、沐瑶、萱宁、蓉悦、芷若、林溪、彩萱、绮梦</text>
       </view>
     </view>
   </view>
@@ -89,11 +184,11 @@
     <view class="faq-list">
       <view class="faq-item">
         <text class="faq-q">Q：如何给宝宝起一个好名字？</text>
-        <text class="faq-a">A：好名字需要考虑音、形、义三个方面。读音要朗朗上口，字形要美观易写，寓意要美好吉祥。同时可以结合宝宝的出生时间，选择诗词典故的字。</text>
+        <text class="faq-a">A：好名字需要考虑音、形、义三个方面。读音要朗朗上口，字形要美观易写，寓意要美好吉祥。同时可以结合宝宝的出生时间和生肖属相，选择诗词典故的字。易名宝宝可以帮您一键生成好名字。</text>
       </view>
       <view class="faq-item">
         <text class="faq-q">Q：宝宝起名需要避讳什么？</text>
-        <text class="faq-a">A：避免使用生僻字、多音字；避免与长辈名字重复；避免不雅的谐音；避免寓意不好的字；避免笔画过于复杂的字。</text>
+        <text class="faq-a">A：避免使用生僻字、多音字；避免与长辈名字重复；避免不雅的谐音；避免寓意不好的字；避免笔画过于复杂的字；避免太大众化的名字。</text>
       </view>
       <view class="faq-item">
         <text class="faq-q">Q：双胞胎宝宝如何起名？</text>
@@ -103,19 +198,31 @@
         <text class="faq-q">Q：易名宝宝起名服务是免费的吗？</text>
         <text class="faq-a">A：是的，易名宝宝提供每日免费起名机会，让您可以免费体验专业的智能起名服务。分享给好友还可以获得更多起名机会。</text>
       </view>
+      <view class="faq-item">
+        <text class="faq-q">Q：2026年马宝宝起名有什么讲究？</text>
+        <text class="faq-a">A：2026年是丙午马年，马宝宝起名宜用带艹、木、禾等部首的字，寓意粮食丰盛。也宜用衣、彡、巾等部首的字，寓意事业有成。同时可结合诗经楚辞选取诗意美名。</text>
+      </view>
+      <view class="faq-item">
+        <text class="faq-q">Q：怎么从诗经楚辞里取名字？</text>
+        <text class="faq-a">A：从诗经楚辞取名是传统文化中最高雅的方式之一。经典如"静姝"出自《诗经》、"正则"出自《楚辞》。易名宝宝内置了大量的诗经楚辞名句，智能为您推荐最有诗意的名字。</text>
+      </view>
+      <view class="faq-item">
+        <text class="faq-q">Q：名字打分准不准？</text>
+        <text class="faq-a">A：易名宝宝的名字打分从音律、字义、寓意、字形多个维度进行综合评估，给出专业客观的评分和改进建议，帮助您选择更好的名字。</text>
+      </view>
     </view>
   </view>
 
   <!-- 服务关键词 -->
   <view class="keywords-section">
     <text class="section-title">服务关键词</text>
-    <text class="keywords-list">宝宝起名 | 婴儿取名 | 新生儿起名 | 免费起名 | 智能起名 | 2024起名 | 2025起名 | 龙宝宝起名 | 蛇宝宝起名 | 男孩名字 | 女孩名字 | 诗意起名 | 国学起名 | 诗意起名 | 诗经起名 | 楚辞起名 | 好听的名字 | 吉祥名字 | 起名大全</text>
+    <text class="keywords-list">宝宝起名 | 婴儿取名 | 新生儿起名 | 新生儿取名 | 免费起名 | 免费取名 | 智能起名 | 在线起名 | 2026起名 | 2026马宝宝起名 | 2025起名 | 2025蛇宝宝起名 | 龙宝宝起名 | 蛇宝宝起名 | 马宝宝起名 | 男孩名字 | 女孩名字 | 男孩起名 | 女孩起名 | 诗意起名 | 国学起名 | 诗经起名 | 楚辞起名 | 唐诗起名 | 宋词起名 | 好听的名字 | 吉祥名字 | 起名大全 | 取名大全 | 名字大全 | 宝宝名字 | 名字打分 | 名字评分 | 起名网 | 起名工具 | 起名软件 | 取名工具 | 起名字 | 取名字 | 诗经取名 | 楚辞取名 | 文艺起名 | 古风起名 | 有内涵的名字 | 寓意好的名字</text>
   </view>
 
   <!-- 底部信息 -->
   <view class="footer-section">
     <text class="footer-text">易名宝宝 - 您的智能起名专家</text>
     <text class="footer-text">专业 | 智能 | 免费 | 便捷</text>
-    <text class="copyright">Copyright 2024 易名宝宝 All Rights Reserved</text>
+    <text class="copyright">Copyright 2024-2026 易名宝宝 All Rights Reserved</text>
   </view>
 </view>

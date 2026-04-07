@@ -320,6 +320,49 @@
   right: 0;
   padding: 32rpx 48rpx calc(48rpx + env(safe-area-inset-bottom));
   background: linear-gradient(180deg, rgba(253, 248, 243, 0) 0%, #FDF8F3 30%);
+  z-index: 10;
+}
+
+/* SEO入口 */
+.seo-entry {
+  display: flex;
+  align-items: center;
+  margin: 0 48rpx 48rpx;
+  padding: 32rpx 36rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.04);
+  border: 2rpx solid #f0ece6;
+}
+
+.seo-entry-icon {
+  font-size: 48rpx;
+  margin-right: 24rpx;
+}
+
+.seo-entry-text {
+  flex: 1;
+}
+
+.seo-entry-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6rpx;
+}
+
+.seo-entry-desc {
+  display: block;
+  font-size: 22rpx;
+  color: #a09890;
+  line-height: 1.4;
+}
+
+.seo-entry-arrow {
+  font-size: 40rpx;
+  color: #D4838F;
+  margin-left: 16rpx;
 }
 
 .start-btn {

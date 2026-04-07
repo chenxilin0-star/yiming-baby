@@ -223,6 +223,85 @@
   word-break: break-all;
 }
 
+/* 快速入口 */
+.cta-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.cta-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.cta-card {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 28rpx;
+  background: linear-gradient(135deg, #faf8f5, #fff);
+  border-radius: 20rpx;
+  border: 2rpx solid #f0ece6;
+}
+
+.cta-icon {
+  font-size: 48rpx;
+  margin-right: 24rpx;
+}
+
+.cta-text-wrap {
+  flex: 1;
+}
+
+.cta-title {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6rpx;
+}
+
+.cta-desc {
+  display: block;
+  font-size: 24rpx;
+  color: #8a8a8a;
+}
+
+.cta-arrow {
+  font-size: 36rpx;
+  color: #D4838F;
+  font-weight: 300;
+}
+
+/* 年份专区 */
+.year-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.year-content {
+  padding: 0;
+}
+
+/* 经典诗词专区 */
+.classic-section {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.classic-content {
+  padding: 0;
+}
+
 /* 底部信息 */
 .footer-section {
   text-align: center;

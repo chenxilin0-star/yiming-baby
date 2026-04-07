@@ -76,6 +76,16 @@
     </view>
   </view>
 
+  <!-- SEO入口 - 起名指南 -->
+  <view class="seo-entry" bindtap="goToSeoPage">
+    <text class="seo-entry-icon">📖</text>
+    <view class="seo-entry-text">
+      <text class="seo-entry-title">起名指南 & 常见问题</text>
+      <text class="seo-entry-desc">宝宝起名注意事项、2026马宝宝起名推荐、诗经楚辞起名精选</text>
+    </view>
+    <text class="seo-entry-arrow">›</text>
+  </view>
+
   <!-- 底部操作区 -->
   <view class="footer-area">
     <button class="start-btn {{hasQuota ? '' : 'disabled'}}" bindtap="startNaming">

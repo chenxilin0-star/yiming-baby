@@ -77,6 +77,11 @@ Page({
     this.setData({ showNoQuotaModal: false })
   },
 
+  // 跳转到SEO起名指南页面
+  goToSeoPage() {
+    wx.navigateTo({ url: '/pages/seo/index/index?from=home' })
+  },
+
   goBack() {
     // 首页不需要返回
   },
@@ -86,8 +91,9 @@ Page({
     quotaManager.recordShare(scene)
 
     return {
-      title: '易名宝宝 - 智能起名，传承国学文化',
-      path: `/pages/index/index?scene=${scene}`
+      title: '易名宝宝 - 免费宝宝起名取名 | 诗经楚辞智能起名',
+      path: `/pages/index/index?scene=${scene}`,
+      imageUrl: '/images/share_cover.png'
     }
   },
 
@@ -97,8 +103,9 @@ Page({
     quotaManager.recordShare(scene, 'timeline')
 
     return {
-      title: '易名宝宝 - 智能起名，传承国学文化',
-      query: `scene=${scene}`
+      title: '易名宝宝 - 免费宝宝起名取名 | 诗经楚辞智能起名',
+      query: `scene=${scene}`,
+      imageUrl: '/images/share_cover.png'
     }
   }
 })

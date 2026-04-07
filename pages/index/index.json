@@ -2,5 +2,7 @@
   "usingComponents": {
     "quota-indicator": "/components/quota-indicator/quota-indicator"
   },
-  "navigationBarTitleText": "易名宝宝"
+  "navigationBarTitleText": "易名宝宝 - 宝宝起名取名 | 新生儿起名大全 | 诗词智能起名",
+  "enableShareAppMessage": true,
+  "enableShareTimeline": true
 }
